@@ -12,7 +12,18 @@
 #include <QtMath>
 #include <QProcess>
 #include <QCheckBox>
+
+#include <QPainter>
+#include <QPen>
+#include <QSlider>
+#include <QFile>
 //#include <QLinearMapping>
+
+#include <QtPrintSupport/QPrinter>
+#include <QtPrintSupport/QPrintDialog>
+#include <QPageSize>
+
+//#include "painterprinter.h"
 
 //for tables
 #include "xlsxdocument.h"
@@ -49,6 +60,9 @@ signals:
     void sendOffsetX(qreal x);
     void sendOffsetY(qreal y);
 
+protected:
+    void paintEvent(QPaintEvent *event);
+
 private slots:
 
 //    struct vpline {
@@ -62,6 +76,10 @@ private slots:
 //        QString vhodit;
 //        QString post;
 //    }pivpline;
+
+    void updateCanvasPE();
+    void updateCanvasSP();
+    void updateCanvasVP();
 
 
     void createSheetXlsxVP(QString filemane, QString sheetName);
@@ -105,6 +123,10 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+//    painterPrinter *pp;
+
+    int _xOffsetPE, _yOffsetPE, _xOffsetSP, _yOffsetSP, _xOffsetVP, _yOffsetVP;
 //    OGLWidget *oGL;
 };
 #endif // MAINWINDOW_H

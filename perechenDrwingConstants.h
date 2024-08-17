@@ -1,6 +1,7 @@
 #ifndef PERECHENDRWINGCONSTANTS_H
 #define PERECHENDRWINGCONSTANTS_H
 #include <QVector>
+#include "Structures.h"
 
 double Basicline = 0.6;
 double Thinline = 0.2;

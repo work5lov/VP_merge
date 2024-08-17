@@ -1,4 +1,4 @@
-QT       += core gui widgets
+QT       += core gui widgets printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,21 +13,21 @@ QXLSX_PARENTPATH=./         # current QXlsx path is . (. means curret directory)
 QXLSX_HEADERPATH=./header/  # current QXlsx header path is ./header/
 QXLSX_SOURCEPATH=./source/  # current QXlsx source path is ./source/
 include(./QXlsx.pri)
-LIBS += -lOpenGL32
+#LIBS += -lOpenGL32
 
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    painterprinter.cpp
+#    painterprinter.cpp
 
 HEADERS += \
     Structures.h \
-    lriDrwingConstants.h \
+#    lriDrwingConstants.h \
     mainwindow.h \
-    painterprinter.h \
-    perechenDrwingConstants.h \
-    specificationDrwingContants.h \
-    vedomostDrwingConstants.h
+#    painterprinter.h \
+#    perechenDrwingConstants.h \
+#    specificationDrwingContants.h \
+#    vedomostDrwingConstants.h
 
 FORMS += \
     mainwindow.ui
