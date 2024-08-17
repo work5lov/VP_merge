@@ -1,4 +1,4 @@
-QT       += core gui widgets opengl
+QT       += core gui widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -21,8 +21,13 @@ SOURCES += \
     painterprinter.cpp
 
 HEADERS += \
+    Structures.h \
+    lriDrwingConstants.h \
     mainwindow.h \
-    painterprinter.h
+    painterprinter.h \
+    perechenDrwingConstants.h \
+    specificationDrwingContants.h \
+    vedomostDrwingConstants.h
 
 FORMS += \
     mainwindow.ui

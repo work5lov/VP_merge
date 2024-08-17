@@ -22,16 +22,16 @@
 #include "xlsxrichstring.h"
 #include "xlsxworkbook.h"
 
-#include <QOpenGLWidget>
-#include <QOpenGLFunctions>
-#include <QOpenGLTexture>
-#include <QOpenGLShaderProgram>
-#include <QOpenGLBuffer>
-#include <QOpenGLContext>
-#include <QOpenGLVertexArrayObject>
-#include <QOpenGLExtraFunctions>
-#include <QPropertyAnimation>
-#include "oglwidget.h"
+//#include <QOpenGLWidget>
+//#include <QOpenGLFunctions>
+//#include <QOpenGLTexture>
+//#include <QOpenGLShaderProgram>
+//#include <QOpenGLBuffer>
+//#include <QOpenGLContext>
+//#include <QOpenGLVertexArrayObject>
+//#include <QOpenGLExtraFunctions>
+//#include <QPropertyAnimation>
+//#include "oglwidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -105,6 +105,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    OGLWidget *oGL;
+//    OGLWidget *oGL;
 };
 #endif // MAINWINDOW_H

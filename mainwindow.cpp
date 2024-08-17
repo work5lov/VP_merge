@@ -199,7 +199,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->specification->hide();
     ui->tabWidget->setTabEnabled(2,false);
     ui->tabWidget->setTabEnabled(3,false);
-//    ui->tabWidget->setTabEnabled(4,false);
+    ui->tabWidget->setTabEnabled(4,false);
 
 //    ui->boasList->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
 

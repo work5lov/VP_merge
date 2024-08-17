@@ -1,0 +1,1273 @@
+<templates>
+  <parameters>
+    <parameter>Наименование</parameter>
+    <parameter>Наименование1</parameter>
+    <parameter>Наименование2</parameter>
+    <parameter>Обозначение</parameter>
+    <parameter>Разработал</parameter>
+    <parameter>Проверил</parameter>
+    <parameter>Техконтроль</parameter>
+    <parameter>Начальник отдела</parameter>
+    <parameter>Нормоконтроль</parameter>
+    <parameter>Утвердил</parameter>
+    <parameter>Материал</parameter>
+    <parameter>Материал1</parameter>
+    <parameter>Материал2</parameter>
+    <parameter>Компания</parameter>
+	<parameter>Компания1</parameter>
+	<parameter>Компания2</parameter>
+    <parameter>Первичная применяемость</parameter>
+	<parameter>ТипДокумента</parameter>
+    <parameter>Var</parameter>
+    <parameter>Должность</parameter>
+    <parameter>Графа 02</parameter>
+    <parameter>Графа 03</parameter>
+    <parameter>Графа 05</parameter>
+    <parameter>Графа 06</parameter>
+    <parameter>Графа 07</parameter>
+    <parameter>Графа 08</parameter>
+    <parameter>Графа 10</parameter>
+    <parameter>Графа 11</parameter>
+    <parameter>Графа 12</parameter>
+    <parameter>Графа 13</parameter>
+    <parameter>Графа 12 - Подпись</parameter>
+    <parameter>Графа 14 - Порядковый номер изменения</parameter>
+    <parameter>Графа 15 - Указания об изменении листа</parameter>
+    <parameter>Графа 16 - Номер извещения</parameter>
+    <parameter>Графа 17</parameter>
+    <parameter>Графа 18</parameter>       
+    <parameter>Графа 19 - Инвентарный номер подлинника</parameter>
+    <parameter>Графа 20 - Подпись и дата приемки в СТД</parameter>
+    <parameter>Графа 21 - Взам. инв №</parameter>
+    <parameter>Графа 22 - Инвентарный номер дубликата</parameter>
+    <parameter>Графа 23 - Подпись и дата приемки дубликата в СТД</parameter>
+    <parameter>Графа 24 - Справ. №</parameter>
+    <parameter>Графа 26</parameter>
+    <parameter>Графа 27</parameter>
+    <parameter>Графа 28 - Номер и год утверждения литеры</parameter>
+    <parameter>Графа 29 - Номер и год утверждения документации</parameter>
+    <parameter>Графа 30 - Индекс заказчика</parameter>
+    <parameter>Графа 31</parameter>
+    <parameter>Графа 32</parameter>
+    <parameter>Графа 33</parameter>
+    <parameter>Графа 34</parameter>
+  </parameters>
+  <template name="А0" width="1189" height="841" active="true">
+    <line x1="20" y1="5" x2="20" y2="836" width="Basicline" />
+    <line x1="20" y1="836" x2="1184" y2="836" width="Basicline" />
+    <line x1="1184" y1="836" x2="1184" y2="5" width="Basicline" />
+    <line x1="1184" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="1189" y1="-841"/>
+      <block name="Title_block_List1vp" x1="1189" y1="-841" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-841"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+      <block name="rz" x1="1189" y1="0" ifvar="showrz" ifvalue="1"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="1189" y1="-841"/>
+      <block name="Left_block_List2" x1="0" y1="-841"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+  <template name="А1" width="841" height="594" active="true">
+    <line x1="20" y1="5" x2="20" y2="589" width="Basicline" />
+    <line x1="20" y1="589" x2="836" y2="589" width="Basicline" />
+    <line x1="836" y1="589" x2="836" y2="5" width="Basicline" />
+    <line x1="836" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="841" y1="-594"/>
+      <block name="Title_block_List1vp" x1="841" y1="-594" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-594"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+      <block name="rz" x1="841" y1="0" ifvar="showrz" ifvalue="1"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="841" y1="-594"/>
+      <block name="Left_block_List2" x1="0" y1="-594"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+  <template name="А2" width="594" height="420" active="true">
+    <line x1="20" y1="5" x2="20" y2="415" width="Basicline" />
+    <line x1="20" y1="415" x2="589" y2="415" width="Basicline" />
+    <line x1="589" y1="415" x2="589" y2="5" width="Basicline" />
+    <line x1="589" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="594" y1="-420"/>
+      <block name="Title_block_List1vp" x1="594" y1="-420" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-420"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+      <block name="rz" x1="594" y1="0" ifvar="showrz" ifvalue="1"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="594" y1="-420"/>
+      <block name="Left_block_List2" x1="0" y1="-420"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+  <template name="А3" width="420" height="297" active="true">
+    <line x1="20" y1="5" x2="20" y2="292" width="Basicline" />
+    <line x1="20" y1="292" x2="415" y2="292" width="Basicline" />
+    <line x1="415" y1="292" x2="415" y2="5" width="Basicline" />
+    <line x1="415" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="420" y1="-297"/>
+      <block name="Title_block_List1vp" x1="420" y1="-297" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-297"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+      <block name="rz" x1="420" y1="0" ifvar="showrz" ifvalue="1"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="420" y1="-297"/>
+      <block name="Left_block_List2" x1="0" y1="-297"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+  <template name="А4" width="210" height="297" active="true">
+    <line x1="20" y1="5" x2="20" y2="292" width="Basicline" />
+    <line x1="20" y1="292" x2="205" y2="292" width="Basicline" />
+    <line x1="205" y1="292" x2="205" y2="5" width="Basicline" />
+    <line x1="205" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="210" y1="-297"/>
+      <block name="Title_block_List1vp" x1="210" y1="-297" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-297"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+      <block name="rz" x1="210" y1="0" ifvar="showrz" ifvalue="1"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="210" y1="-297"/>
+      <block name="Left_block_List2" x1="0" y1="-297"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+
+  <template name="А4_PE" width="210" height="297" active="false">
+    <line x1="20" y1="5" x2="20" y2="292" width="Basicline" />
+    <line x1="20" y1="292" x2="205" y2="292" width="Basicline" />
+    <line x1="205" y1="292" x2="205" y2="5" width="Basicline" />
+    <line x1="205" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1_TextDocuments" x1="210" y1="-297"/>
+      <block name="Title_block_List1vp_TextDocuments" x1="210" y1="-252" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-297"/>
+      <block name="Top_block_PE" x1="0" y1="0"/>
+      <block name="Lines_A4_PE_25lines_List1" x1="0" y1="-297" />
+      <block name="Lines_A4_PE_3lines_List1" x1="0" y1="-297" ifvar="vp" ifvalue="0"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="210" y1="-297"/>
+      <block name="Left_block_List2" x1="0" y1="-297"/>
+      <block name="Top_block_PE" x1="0" y1="0"/>
+      <block name="Lines_A4_PE_List2" x1="0" y1="-297"/>
+    </otherpage>
+  </template>
+  <template name="А4_SP" width="210" height="297" active="false">
+    <line x1="20" y1="5" x2="20" y2="292" width="Basicline" />
+    <line x1="20" y1="292" x2="205" y2="292" width="Basicline" />
+    <line x1="205" y1="292" x2="205" y2="5" width="Basicline" />
+    <line x1="205" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1_TextDocuments" x1="210" y1="-297"/>
+      <block name="Title_block_List1vp_TextDocuments" x1="210" y1="-252" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-297"/>
+      <block name="Top_block_SP" x1="0" y1="0"/>
+      <block name="Lines_A4_SP_25lines_List1" x1="0" y1="-297" />
+      <block name="Lines_A4_SP_3lines_List1" x1="0" y1="-297" ifvar="vp" ifvalue="0"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="210" y1="-297"/>
+      <block name="Left_block_List2" x1="0" y1="-297"/>
+      <block name="Top_block_SP" x1="0" y1="0"/>
+      <block name="Lines_A4_SP_List2" x1="0" y1="-297"/>
+    </otherpage>
+  </template>
+  <template name="А4_ListRegistration" width="210" height="297" active="false">
+    <line x1="20" y1="5" x2="20" y2="292" width="Basicline" />
+    
+    <line x1="28" y1="277" x2="28" y2="16" width="Basicline" />
+    <line x1="48" y1="277" x2="48" y2="24" width="Basicline" />
+    <line x1="65" y1="277" x2="65" y2="24" width="Basicline" />
+    <line x1="80" y1="277" x2="80" y2="24" width="Basicline" />
+    <line x1="97" y1="277" x2="97" y2="16" width="Basicline" />
+    <line x1="107" y1="277" x2="107" y2="16" width="Basicline" />
+    <line x1="125" y1="277" x2="125" y2="16" width="Basicline" />
+    <line x1="160" y1="277" x2="160" y2="16" width="Basicline" />
+    <line x1="175" y1="277" x2="175" y2="16" width="Basicline" />
+    <line x1="195" y1="277" x2="195" y2="16" width="Basicline" />
+    
+    <line x1="205" y1="292" x2="205" y2="5" width="Basicline" />
+    
+    
+    <line x1="20" y1="292" x2="205" y2="292" width="Basicline" />
+    
+    <line x1="205" y1="5" x2="20" y2="5" width="Basicline" />
+    <line x1="20" y1="45" x2="205" y2="45" width="Basicline" />   
+    <line x1="20" y1="16" x2="205" y2="16" width="Basicline" />
+	<line x1="28" y1="24" x2="97" y2="24" width="Basicline" />
+    
+    
+    
+    <line x1="20" y1="45" x2="205" y2="45" width="Thinline" />
+    <line x1="20" y1="53" x2="205" y2="53" width="Thinline" />
+    <line x1="20" y1="61" x2="205" y2="61" width="Thinline" />
+    <line x1="20" y1="69" x2="205" y2="69" width="Thinline" />
+    <line x1="20" y1="77" x2="205" y2="77" width="Thinline" />
+    <line x1="20" y1="85" x2="205" y2="85" width="Thinline" />
+    <line x1="20" y1="93" x2="205" y2="93" width="Thinline" />
+    <line x1="20" y1="101" x2="205" y2="101" width="Thinline" />
+    <line x1="20" y1="109" x2="205" y2="109" width="Thinline" />
+    <line x1="20" y1="117" x2="205" y2="117" width="Thinline" />
+    <line x1="20" y1="125" x2="205" y2="125" width="Thinline" />
+    <line x1="20" y1="133" x2="205" y2="133" width="Thinline" />
+    <line x1="20" y1="141" x2="205" y2="141" width="Thinline" />
+    <line x1="20" y1="149" x2="205" y2="149" width="Thinline" />
+    <line x1="20" y1="157" x2="205" y2="157" width="Thinline" />
+    <line x1="20" y1="165" x2="205" y2="165" width="Thinline" />
+    <line x1="20" y1="173" x2="205" y2="173" width="Thinline" />
+    <line x1="20" y1="181" x2="205" y2="181" width="Thinline" />
+    <line x1="20" y1="189" x2="205" y2="189" width="Thinline" />
+    <line x1="20" y1="197" x2="205" y2="197" width="Thinline" />
+    <line x1="20" y1="205" x2="205" y2="205" width="Thinline" />
+    <line x1="20" y1="213" x2="205" y2="213" width="Thinline" />
+    <line x1="20" y1="221" x2="205" y2="221" width="Thinline" />
+    <line x1="20" y1="229" x2="205" y2="229" width="Thinline" />
+    <line x1="20" y1="237" x2="205" y2="237" width="Thinline" />
+    <line x1="20" y1="245" x2="205" y2="245" width="Thinline" />
+  	<line x1="20" y1="253" x2="205" y2="253" width="Thinline" />
+    <line x1="20" y1="261" x2="205" y2="261" width="Thinline" />
+    <line x1="20" y1="269" x2="205" y2="269" width="Thinline" />
+	
+    <stext x1="112.5" y1="10.5" size="3.51" angle="0" position="HVCenter">ЛИСТ РЕГИСТРАЦИЙ ИЗМЕНЕНИЙ</stext>
+    <stext x1="24" y1="30" size="2.5" angle="0" position="HVCenter" width="11">Изм.</stext>
+    <stext x1="63" y1="20" size="3.51" angle="0" position="HVCenter" width="63">Номера листов (страниц)</stext>
+    <stext x1="37.5" y1="34" size="2.5" angle="0" position="HVCenter" width="20">Измененных</stext>
+    <stext x1="56.5" y1="32" size="2.5" angle="0" position="HVCenter">Заменен-</stext>
+    <stext x1="56.5" y1="36" size="2.5" angle="0" position="HVCenter">ных</stext>
+    <stext x1="73" y1="34" size="2.5" angle="0" position="HVCenter">Новых</stext>
+    <stext x1="88" y1="32" size="2.5" angle="0" position="HVCenter" width="15">Аннулиро-</stext>
+    <stext x1="88" y1="36" size="2.5" angle="0" position="HVCenter">ванных</stext>
+    <stext x1="99" y1="31" size="2.5" angle="90" position="HVCenter90">Всего листов</stext>
+	<stext x1="102" y1="31.5" size="2.5" angle="90" position="HVCenter90">(страниц)</stext>
+    <stext x1="104.7" y1="31" size="2.5" angle="90" position="HVCenter90">в документе</stext>
+    <stext x1="143" y1="26" size="2.5" angle="0" position="HVCenter">№</stext>
+    <stext x1="143" y1="30" size="2.5" angle="0" position="HVCenter">документа</stext>
+    <stext x1="143" y1="34" size="2.5" angle="0" position="HVCenter">(извещения)</stext>
+    <stext x1="112" y1="31" size="2.5" angle="90" position="HVCenter90">Входящий №</stext>
+    <stext x1="116" y1="30.7" size="2.32" angle="90" position="HVCenter90" width="26">сопроводительного</stext>
+    <stext x1="120" y1="31" size="2.35" angle="90" position="HVCenter90" width="26">документа и дата</stext>
+    <stext x1="184.5" y1="27" size="2.35" angle="0" position="HVCenter" width="20">Расшифровка</stext>
+    <stext x1="185" y1="35" size="2.5" angle="0" position="HVCenter">подписи</stext>
+    <stext x1="167.5" y1="31" size="2.5" angle="0" position="HVCenter" width="19">Подпись</stext>
+    <stext x1="200" y1="31" size="2.5" angle="0" position="HVCenter" width="11">Дата</stext>
+	<firstpage>
+       <block name="Title_block_List2" x1="210" y1="-297"/>
+       <block name="Left_block_List2" x1="0" y1="-297"/>
+	</firstpage>
+  </template>
+
+  <template name="А3_VP" width="420" height="297" active="false">
+    <line x1="20" y1="5" x2="20" y2="292" width="Basicline" />
+    <line x1="20" y1="292" x2="415" y2="292" width="Basicline" />
+    <line x1="415" y1="292" x2="415" y2="5" width="Basicline" />
+    <line x1="415" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1_TextDocuments" x1="420" y1="-297"/>
+      <block name="Title_block_List1vp_TextDocuments" x1="420" y1="-252" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-297"/>
+      <block name="Top_block_VP" x1="0" y1="0"/>
+      <block name="Lines_A3_List1" x1="0" y1="-297"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="420" y1="-297"/>
+      <block name="Left_block_List2" x1="0" y1="-297"/>
+      <block name="Top_block_VP" x1="0" y1="0"/>
+      <block name="Lines_A3_List2" x1="0" y1="-297"/>
+    </otherpage>
+  </template>
+
+  <template name="А1x3" width="1783" height="841" active="true">
+    <line x1="20" y1="5" x2="20" y2="836" width="Basicline" />
+    <line x1="20" y1="836" x2="1778" y2="836" width="Basicline" />
+    <line x1="1778" y1="836" x2="1778" y2="5" width="Basicline" />
+    <line x1="1778" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="1783" y1="-841"/>
+      <block name="Title_block_List1vp" x1="1783" y1="-841" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-841"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+      <block name="rz" x1="1783" y1="0" ifvar="showrz" ifvalue="1"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="1783" y1="-841"/>
+      <block name="Left_block_List2" x1="0" y1="-841"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+  <template name="А1x4" width="2378" height="841" active="true">
+    <line x1="20" y1="5" x2="20" y2="836" width="Basicline" />
+    <line x1="20" y1="836" x2="2373" y2="836" width="Basicline" />
+    <line x1="2373" y1="836" x2="2373" y2="5" width="Basicline" />
+    <line x1="2373" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="2378" y1="-841"/>
+      <block name="Title_block_List1vp" x1="2378" y1="-841" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-841"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+      <block name="rz" x1="2378" y1="0" ifvar="showrz" ifvalue="1"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="2378" y1="-841"/>
+      <block name="Left_block_List2" x1="0" y1="-841"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+
+  <template name="А2x3" width="1261" height="594" active="true">
+    <line x1="20" y1="5" x2="20" y2="589" width="Basicline" />
+    <line x1="20" y1="589" x2="1256" y2="589" width="Basicline" />
+    <line x1="1256" y1="589" x2="1256" y2="5" width="Basicline" />
+    <line x1="1256" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="1261" y1="-594"/>
+      <block name="Title_block_List1vp" x1="1261" y1="-594" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-594"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+      <block name="rz" x1="1261" y1="0" ifvar="showrz" ifvalue="1"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="1261" y1="-594"/>
+      <block name="Left_block_List2" x1="0" y1="-594"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+  <template name="А2x4" width="1682" height="594" active="true">
+    <line x1="20" y1="5" x2="20" y2="589" width="Basicline" />
+    <line x1="20" y1="589" x2="1677" y2="589" width="Basicline" />
+    <line x1="1677" y1="589" x2="1677" y2="5" width="Basicline" />
+    <line x1="1677" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="1682" y1="-594"/>
+      <block name="Title_block_List1vp" x1="1682" y1="-594" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-594"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+      <block name="rz" x1="1682" y1="0" ifvar="showrz" ifvalue="1"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="1682" y1="-594"/>
+      <block name="Left_block_List2" x1="0" y1="-594"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+  <template name="А2x5" width="2102" height="594" active="true">
+    <line x1="20" y1="5" x2="20" y2="589" width="Basicline" />
+    <line x1="20" y1="589" x2="2097" y2="589" width="Basicline" />
+    <line x1="2097" y1="589" x2="2097" y2="5" width="Basicline" />
+    <line x1="2097" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="2102" y1="-594"/>
+      <block name="Title_block_List1vp" x1="2102" y1="-594" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-594"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+      <block name="rz" x1="2102" y1="0" ifvar="showrz" ifvalue="1"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="2102" y1="-594"/>
+      <block name="Left_block_List2" x1="0" y1="-594"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+
+  <template name="А3x3" width="891" height="420" active="true">
+    <line x1="20" y1="5" x2="20" y2="415" width="Basicline" />
+    <line x1="20" y1="415" x2="886" y2="415" width="Basicline" />
+    <line x1="886" y1="415" x2="886" y2="5" width="Basicline" />
+    <line x1="886" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="891" y1="-420"/>
+      <block name="Title_block_List1vp" x1="891" y1="-420" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-420"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+      <block name="rz" x1="891" y1="0" ifvar="showrz" ifvalue="1"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="891" y1="-420"/>
+      <block name="Left_block_List2" x1="0" y1="-420"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+  <template name="А3x4" width="1189" height="420" active="true">
+    <line x1="20" y1="5" x2="20" y2="415" width="Basicline" />
+    <line x1="20" y1="415" x2="1184" y2="415" width="Basicline" />
+    <line x1="1184" y1="415" x2="1184" y2="5" width="Basicline" />
+    <line x1="1184" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="1189" y1="-420"/>
+      <block name="Title_block_List1vp" x1="1189" y1="-420" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-420"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+      <block name="rz" x1="1189" y1="0" ifvar="showrz" ifvalue="1"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="1189" y1="-420"/>
+      <block name="Left_block_List2" x1="0" y1="-420"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+  <template name="А3x5" width="1486" height="420" active="true">
+    <line x1="20" y1="5" x2="20" y2="415" width="Basicline" />
+    <line x1="20" y1="415" x2="1481" y2="415" width="Basicline" />
+    <line x1="1481" y1="415" x2="1481" y2="5" width="Basicline" />
+    <line x1="1481" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="1486" y1="-420"/>
+      <block name="Title_block_List1vp" x1="1486" y1="-420" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-420"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+      <block name="rz" x1="1486" y1="0" ifvar="showrz" ifvalue="1"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="1486" y1="-420"/>
+      <block name="Left_block_List2" x1="0" y1="-420"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+  <template name="А3x6" width="1783" height="420" active="true">
+    <line x1="20" y1="5" x2="20" y2="415" width="Basicline" />
+    <line x1="20" y1="415" x2="1778" y2="415" width="Basicline" />
+    <line x1="1778" y1="415" x2="1778" y2="5" width="Basicline" />
+    <line x1="1778" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="1783" y1="-420"/>
+      <block name="Title_block_List1vp" x1="1783" y1="-420" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-420"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+      <block name="rz" x1="1783" y1="0" ifvar="showrz" ifvalue="1"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="1783" y1="-420"/>
+      <block name="Left_block_List2" x1="0" y1="-420"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+  <template name="А3x7" width="2080" height="420" active="true">
+    <line x1="20" y1="5" x2="20" y2="415" width="Basicline" />
+    <line x1="20" y1="415" x2="2075" y2="415" width="Basicline" />
+    <line x1="2075" y1="415" x2="2075" y2="5" width="Basicline" />
+    <line x1="2075" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="2080" y1="-420"/>
+      <block name="Title_block_List1vp" x1="2080" y1="-420" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-420"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+      <block name="rz" x1="2080" y1="0" ifvar="showrz" ifvalue="1"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="2080" y1="-420"/>
+      <block name="Left_block_List2" x1="0" y1="-420"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+
+  <template name="А4x3" width="630" height="297" active="true">
+    <line x1="20" y1="5" x2="20" y2="292" width="Basicline" />
+    <line x1="20" y1="292" x2="625" y2="292" width="Basicline" />
+    <line x1="625" y1="292" x2="625" y2="5" width="Basicline" />
+    <line x1="625" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="630" y1="-297"/>
+      <block name="Title_block_List1vp" x1="630" y1="-297" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-297"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="630" y1="-297"/>
+      <block name="Left_block_List2" x1="0" y1="-297"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+  <template name="А4x4" width="841" height="297" active="true">
+    <line x1="20" y1="5" x2="20" y2="292" width="Basicline" />
+    <line x1="20" y1="292" x2="836" y2="292" width="Basicline" />
+    <line x1="836" y1="292" x2="836" y2="5" width="Basicline" />
+    <line x1="836" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="841" y1="-297"/>
+      <block name="Title_block_List1vp" x1="841" y1="-297" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-297"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="841" y1="-297"/>
+      <block name="Left_block_List2" x1="0" y1="-297"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+  <template name="А4x5" width="1051" height="297" active="true">
+    <line x1="20" y1="5" x2="20" y2="292" width="Basicline" />
+    <line x1="20" y1="292" x2="1046" y2="292" width="Basicline" />
+    <line x1="1046" y1="292" x2="1046" y2="5" width="Basicline" />
+    <line x1="1046" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="1051" y1="-297"/>
+      <block name="Title_block_List1vp" x1="1051" y1="-297" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-297"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="1051" y1="-297"/>
+      <block name="Left_block_List2" x1="0" y1="-297"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+  <template name="А4x6" width="1261" height="297" active="true">
+    <line x1="20" y1="5" x2="20" y2="292" width="Basicline" />
+    <line x1="20" y1="292" x2="1256" y2="292" width="Basicline" />
+    <line x1="1256" y1="292" x2="1256" y2="5" width="Basicline" />
+    <line x1="1256" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="1261" y1="-297"/>
+      <block name="Title_block_List1vp" x1="1261" y1="-297" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-297"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="1261" y1="-297"/>
+      <block name="Left_block_List2" x1="0" y1="-297"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+  <template name="А4x7" width="1471" height="297" active="true">
+    <line x1="20" y1="5" x2="20" y2="292" width="Basicline" />
+    <line x1="20" y1="292" x2="1466" y2="292" width="Basicline" />
+    <line x1="1466" y1="292" x2="1466" y2="5" width="Basicline" />
+    <line x1="1466" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="1471" y1="-297"/>
+      <block name="Title_block_List1vp" x1="1471" y1="-297" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-297"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="1471" y1="-297"/>
+      <block name="Left_block_List2" x1="0" y1="-297"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+  <template name="А4x8" width="1682" height="297" active="true">
+    <line x1="20" y1="5" x2="20" y2="292" width="Basicline" />
+    <line x1="20" y1="292" x2="1677" y2="292" width="Basicline" />
+    <line x1="1677" y1="292" x2="1677" y2="5" width="Basicline" />
+    <line x1="1677" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="1682" y1="-297"/>
+      <block name="Title_block_List1vp" x1="1682" y1="-297" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-297"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="1682" y1="-297"/>
+      <block name="Left_block_List2" x1="0" y1="-297"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+  <template name="А4x9" width="1892" height="297" active="true">
+    <line x1="20" y1="5" x2="20" y2="292" width="Basicline" />
+    <line x1="20" y1="292" x2="1887" y2="292" width="Basicline" />
+    <line x1="1887" y1="292" x2="1887" y2="5" width="Basicline" />
+    <line x1="1887" y1="5" x2="20" y2="5" width="Basicline" />
+    <firstpage>
+      <block name="Title_block_List1" x1="1892" y1="-297"/>
+      <block name="Title_block_List1vp" x1="1892" y1="-297" ifvar="vp" ifvalue="1"/>
+      <block name="Left_block_List1" x1="0" y1="-297"/>
+      <block name="Top_block_List1" x1="0" y1="0" ifvar="vp" ifvalue="1"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </firstpage>
+    <otherpage>
+      <block name="Title_block_List2" x1="1892" y1="-297"/>
+      <block name="Left_block_List2" x1="0" y1="-297"/>
+      <block name="Top_block_List2" x1="0" y1="0"/>
+    </otherpage>
+  </template>
+
+  <block name="Title_block_List1vp">
+    <line x1="-125" y1="60" x2="-125" y2="68" width="Basicline" />
+    <line x1="-125" y1="68" x2="-5" y2="68" width="Basicline" />
+  </block>
+  <block name="Title_block_List1">
+    <line x1="-190" y1="10" x2="-125" y2="10" width="Thinline" />
+    <line x1="-190" y1="15" x2="-125" y2="15" width="Thinline" />
+    <line x1="-190" y1="20" x2="-125" y2="20" width="Thinline" />
+    <line x1="-190" y1="25" x2="-125" y2="25" width="Thinline" />
+    <line x1="-190" y1="30" x2="-125" y2="30" width="Thinline" />
+    <line x1="-190" y1="35" x2="-125" y2="35" width="Basicline" />
+    <line x1="-190" y1="40" x2="-125" y2="40" width="Basicline" />
+    <line x1="-190" y1="45" x2="-125" y2="45" width="Thinline" />
+    <line x1="-190" y1="5" x2="-190" y2="60" width="Basicline" />
+    <line x1="-190" y1="50" x2="-125" y2="50" width="Thinline" />
+    <line x1="-190" y1="55" x2="-125" y2="55" width="Thinline" />
+    <line x1="-190" y1="60" x2="-5" y2="60" width="Basicline" />
+    <line x1="-183" y1="35" x2="-183" y2="60" width="Basicline" />
+    <line x1="-173" y1="5" x2="-173" y2="60" width="Basicline" />
+    <line x1="-150" y1="5" x2="-150" y2="60" width="Basicline" />
+    <line x1="-135" y1="5" x2="-135" y2="60" width="Basicline" />
+    <line x1="-125" y1="20" x2="-55" y2="20" width="Basicline" />
+    <line x1="-125" y1="45" x2="-5" y2="45" width="Basicline" />
+    <line x1="-125" y1="5" x2="-125" y2="60" width="Basicline" />
+
+    <line x1="-125" y1="60" x2="-5" y2="60" width="Basicline" />
+
+    <line x1="-55" y1="20" x2="-5" y2="20" width="Basicline" />
+    <line x1="-55" y1="25" x2="-5" y2="25" width="Basicline" />
+    <line x1="-55" y1="40" x2="-40" y2="40" width="Basicline" />
+    <line x1="-55" y1="5" x2="-55" y2="45" width="Basicline" />
+    <line x1="-50.04" y1="25" x2="-50.04" y2="40" width="Thinline" />
+    <line x1="-45.02" y1="25" x2="-45.02" y2="40" width="Thinline" />
+    <line x1="-40" y1="25" x2="-40" y2="45" width="Basicline" />
+    <line x1="-40" y1="40" x2="-5" y2="40" width="Basicline" />
+    <line x1="-34.43" y1="20" x2="-34.43" y2="25" width="Basicline" />
+    <line x1="-23" y1="25" x2="-23" y2="45" width="Basicline" />
+    <line x1="-5" y1="60" x2="-5" y2="68" width="Basicline" />
+
+    <stext x1="-13.75" y1="42.5" size="3.5" angle="0" position="HVCenter">Масштаб</stext>
+    <vtext x1="-14" y1="32.5" size="5" angle="0" position="HVCenter" var="#scale"/>
+
+    <stext x1="-31.25" y1="42.5" size="3.5" angle="0" position="HVCenter">Масса</stext>
+    <vtext x1="-31.5" y1="32.5" size="5" angle="0" position="HVCenter" var="#massa"/>
+
+    <stext x1="-47.5" y1="42.5" size="3.5" angle="0" position="HVCenter">Лит.</stext>
+    <stext x1="-52.5" y1="32.5" size="5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="П">П</stext>
+    <stext x1="-52.5" y1="32.5" size="5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="Э">Э</stext>
+    <stext x1="-52.5" y1="32.5" size="5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="Т">Т</stext>
+    <stext x1="-46.2" y1="30.1" size="2.8" angle="0" position="HVCenter" ifvar="Lit" ifvalue="О1">1</stext>
+    <stext x1="-46.2" y1="30.1" size="2.8" angle="0" position="HVCenter" ifvar="Lit" ifvalue="О2">2</stext>
+    <stext x1="-47.5" y1="32.5" size="5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="О">О</stext>
+    <stext x1="-47.5" y1="32.5" size="5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="О1">О</stext>
+    <stext x1="-47.5" y1="32.5" size="5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="О2">О</stext>
+    <stext x1="-42.5" y1="32.5" size="5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="А">А</stext>
+    <stext x1="-42.5" y1="32.5" size="5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="Б">Б</stext>
+    <stext x1="-42.5" y1="32.5" size="5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="И">И</stext>
+
+    <stext x1="-114.467" y1="0.771" size="3.5" angle="0" position="">Копировал</stext>
+
+    <stext x1="-130" y1="37.5" size="3.5" angle="0" position="HVCenter">Дата</stext>
+
+    <stext x1="-142.5" y1="37.5" size="3.5" angle="0" position="HVCenter">Подп.</stext>
+    <stext x1="-161.25" y1="37.5" size="3.5" angle="0" position="HVCenter">№ докум.</stext>
+    <stext x1="-178" y1="37.5" size="3.5" angle="0" position="HVCenter">Лист</stext>
+    <stext x1="-186.5" y1="37.5" size="3.5" angle="0" position="HVCenter">Изм.</stext>
+    <vtext x1="-189.467" y1="30.771" size="3.5" angle="0" position="" width="17" var="Design"/>
+    <vtext x1="-189.467" y1="25.771" size="3.5" angle="0" position="" width="17" var="Check"/>
+    <vtext x1="-189.467" y1="20.771" size="3.5" angle="0" position="" width="17" var="Tech"/>
+    <vtext x1="-189.467" y1="15.771" size="3.5" angle="0" position="" width="17" var="Var"/>
+    <vtext x1="-189.467" y1="10.771" size="3.5" angle="0" position="" width="17" var="Normo"/>
+    <vtext x1="-189.467" y1="5.771" size="3.5" angle="0" position="" width="17" var="Utv"/>
+
+    <stext x1="-53.558" y1="20.771" size="3.5" angle="0" position="">Лист</stext>
+    <vtext x1="-40" y1="20.771" size="3.5" angle="0" position="HCenter" var="#pageNumber"/>
+
+    <stext x1="-32.515" y1="20.771" size="3.5" angle="0" position="">Листов</stext>
+    <vtext x1="-12" y1="20.771" size="3.5" angle="0" position="HCenter" var="#pageCount"/>
+
+    <vtext x1="-25" y1="0.771" size="3.5" angle="0" position="HCenter" var="#format"/>
+
+    <vtext x1="-172.32" y1="30.771" size="3.5" angle="0" position="" width="23" var="Разработал"/>
+    <vtext x1="-172.32" y1="25.771" size="3.5" angle="0" position="" width="23" var="Проверил"/>
+    <vtext x1="-172.32" y1="20.771" size="3.5" angle="0" position="" width="23" var="Техконтроль"/>
+    <vtext x1="-172.32" y1="15.771" size="3.5" angle="0" position="" width="23" var="Начальник отдела"/>
+    <vtext x1="-172.32" y1="10.771" size="3.5" angle="0" position="" width="23" var="Нормоконтроль"/>
+    <vtext x1="-172.32" y1="5.771" size="3.5" angle="0" position="" width="23" var="Утвердил"/>
+    <vtext x1="-65" y1="52.5" size="5" angle="0" position="HVCenter" width="120" var="Обозначение"/>
+    <vtext x1="-90" y1="36" size="5" angle="0" position="HVCenter" width="70" var="Наименование"/>
+    <vtext x1="-90" y1="40" size="5" angle="0" position="HVCenter" width="70" var="Наименование1"/>
+    <vtext x1="-90" y1="32" size="5" angle="0" position="HVCenter" width="70" var="Наименование2"/>
+    <vtext x1="-90" y1="24" size="3.5" angle="0" position="HVCenter" width="70" var="ТипДокумента"/>
+    <vtext x1="-90" y1="12.5" size="3.5" angle="0" position="HVCenter" width="70" var="Материал"/>
+    <vtext x1="-90" y1="15.5" size="3.5" angle="0" position="HVCenter" width="70" var="Материал1"/>
+    <vtext x1="-90" y1="9" size="3.5" angle="0" position="HVCenter" width="70" var="Материал2"/>
+    <vtext x1="-30" y1="12.5" size="5" angle="0" position="HVCenter" width="50" var="Компания"/>
+	<vtext x1="-30" y1="15.5" size="5" angle="0" position="HVCenter" width="50" var="Компания1"/>
+	<vtext x1="-30" y1="9.5" size="5" angle="0" position="HVCenter" width="50" var="Компания2"/>
+
+  </block>
+  <block name="Title_block_List2">
+    <line x1="-15" y1="13" x2="-5" y2="13" width="Basicline" />
+    <line x1="-15" y1="5" x2="-15" y2="20" width="Basicline" />
+    <line x1="-125" y1="5" x2="-125" y2="20" width="Basicline" />
+    <line x1="-135" y1="10" x2="-125" y2="10" width="Basicline" />
+    <line x1="-135" y1="5" x2="-135" y2="20" width="Basicline" />
+    <line x1="-150" y1="10" x2="-135" y2="10" width="Basicline" />
+    <line x1="-150" y1="5" x2="-150" y2="20" width="Basicline" />
+    <line x1="-173" y1="10" x2="-150" y2="10" width="Basicline" />
+    <line x1="-173" y1="5" x2="-173" y2="20" width="Basicline" />
+    <line x1="-183" y1="10" x2="-173" y2="10" width="Basicline" />
+    <line x1="-183" y1="5" x2="-183" y2="20" width="Basicline" />
+    <line x1="-190" y1="20" x2="-5" y2="20" width="Basicline" />
+    <line x1="-190" y1="15" x2="-125" y2="15" width="Thinline" />
+    <line x1="-190" y1="10" x2="-183" y2="10" width="Basicline" />
+    <line x1="-190" y1="5" x2="-190" y2="20" width="Basicline" />
+    <stext x1="-130" y1="6" size="3.5" angle="0" position="HCenter" width="10">Дата</stext>
+    <stext x1="-142.5" y1="6" size="3.5" angle="0" position="HCenter">Подп.</stext>
+    <stext x1="-161.7" y1="6" size="3.5" angle="0" position="HCenter">№ докум.</stext>
+    <stext x1="-186.5" y1="6" size="3.5" angle="0" position="HCenter" width="8">Изм.</stext>
+    <stext x1="-178" y1="6" size="3.5" angle="0" position="HCenter" width="10">Лист</stext>
+    <stext x1="-114.467" y1="0.771" size="3.5" angle="0" position="">Копировал</stext>
+    <stext x1="-10" y1="14.5" size="3.5" angle="0" position="HCenter" width="10" >Лист</stext>
+    <vtext x1="-10" y1="7" size="3.5" angle="0" position="HCenter" var="#pageNumber"/> 
+    <vtext x1="-25" y1="0.771" size="3.5" angle="0" position="HCenter" var="#format"/>
+    <vtext x1="-70" y1="12.5" size="5" angle="0" position="HVCenter" width="110" var="Обозначение"/>
+    <vtext x1="-10" y1="9" size="3.5" angle="0" position="HCenter" var="Номер листа"/>
+	<vtext x1="-187" y1="11" size="3.5" angle="0" position="HCenter" width="8" var="Графа 14 - Порядковый номер изменения"/>
+    <vtext x1="-178" y1="11" size="3.5" angle="0" position="HCenter" width="10" var="Графа 15 - Указания об изменении листа"/>
+    <vtext x1="-161.5" y1="11" size="3.5" angle="0" position="HCenter" width="23.5" var="Графа 16 - Номер извещения"/>
+    <vtext x1="-142.5" y1="19.5" size="3.5" angle="0" position="HVCenter" var="Графа 17"/>
+    <vtext x1="-130" y1="19.5" size="3.5" angle="0" position="HVCenter" var="Графа 18"/>
+  </block>
+  <block name="Left_block_List1">
+    <line x1="13" y1="172" x2="13" y2="292" width="Basicline" />
+    <line x1="13" y1="5" x2="13" y2="150" width="Basicline" />
+    <line x1="8" y1="292" x2="20" y2="292" width="Basicline" />
+    <line x1="8" y1="232" x2="20" y2="232" width="Basicline" />
+    <line x1="8" y1="172" x2="8" y2="292" width="Basicline" />
+    <line x1="8" y1="172" x2="20" y2="172" width="Basicline" />
+    <line x1="8" y1="150" x2="20" y2="150" width="Basicline" />
+    <line x1="8" y1="115" x2="20" y2="115" width="Basicline" />
+    <line x1="8" y1="90" x2="20" y2="90" width="Basicline" />
+    <line x1="8" y1="65" x2="20" y2="65" width="Basicline" />
+    <line x1="8" y1="30" x2="20" y2="30" width="Basicline" />
+    <line x1="8" y1="5" x2="8" y2="150" width="Basicline" />
+    <line x1="8" y1="5" x2="20" y2="5" width="Basicline" />
+    <stext x1="10.5" y1="262" size="3.5" angle="90" position="HVCenter90" width="59" >Перв. примен.</stext>
+    <stext x1="10.5" y1="201.5" size="3.5" angle="90" position="HVCenter90" width="59" >Справ. №</stext>
+    <stext x1="10.5" y1="132.5" size="3.5" angle="90" position="HVCenter90" width="33.5" >Подп. и дата</stext>
+    <stext x1="10.5" y1="102.5" size="3.5" angle="90" position="HVCenter90" width="23.5" >Инв. № дубл.</stext>
+    <stext x1="10.5" y1="78" size="3.5" angle="90" position="HVCenter90" width="23.5" >Взам. инв. №</stext>
+    <stext x1="10.5" y1="48" size="3.5" angle="90" position="HVCenter90" width="33.5" >Подп. и дата</stext>
+    <stext x1="10.5" y1="17.5" size="3.5" angle="90" position="HVCenter90" width="23.5" >Инв. № подл.</stext>
+    <vtext x1="16.5" y1="17.5" size="3.5" angle="90" position="HVCenter90" width="23.5" var="Графа 19 - Инвентарный номер подлинника"/>
+    <vtext x1="16.5" y1="48" size="3.5" angle="90" position="HVCenter90" width="33.5" var="Графа 20 - Подпись и дата приемки в СТД"/>
+    <vtext x1="16.5" y1="78" size="3.5" angle="90" position="HVCenter90" width="23.5" var="Графа 21 - Взам. инв №"/>
+    <vtext x1="16.5" y1="102.5" size="3.5" angle="90" position="HVCenter90" width="23.5" var="Графа 22 - Инвентарный номер дубликата"/>
+    <vtext x1="16.5" y1="132.5" size="3.5" angle="90" position="HVCenter90" width="33.5" var="Графа 23 - Подпись и дата приемки дубликата в СТД"/>
+    <vtext x1="16.5" y1="201.5" size="3.5" angle="90" position="HVCenter90" width="59" var="Графа 24 - Справ. №"/>
+    <vtext x1="16.5" y1="262" size="3.5" angle="90" position="HVCenter90" width="59" var="Первичная применяемость"/>
+  </block>
+  <block name="Left_block_List2">
+    <line x1="13" y1="5" x2="13" y2="150" width="Basicline" />
+    <line x1="8" y1="150" x2="20" y2="150" width="Basicline" />
+    <line x1="8" y1="115" x2="20" y2="115" width="Basicline" />
+    <line x1="8" y1="90" x2="20" y2="90" width="Basicline" />
+    <line x1="8" y1="65" x2="20" y2="65" width="Basicline" />
+    <line x1="8" y1="30" x2="20" y2="30" width="Basicline" />
+    <line x1="8" y1="5" x2="8" y2="150" width="Basicline" />
+    <line x1="8" y1="5" x2="20" y2="5" width="Basicline" />
+    <stext x1="10.5" y1="132.5" size="3.5" angle="90" position="HVCenter90" width="33.5" >Подп. и дата</stext>
+    <stext x1="10.5" y1="102.5" size="3.5" angle="90" position="HVCenter90" width="23.5" >Инв. № дубл.</stext>
+    <stext x1="10.5" y1="78" size="3.5" angle="90" position="HVCenter90" width="23.5" >Взам. инв. №</stext>
+    <stext x1="10.5" y1="48" size="3.5" angle="90" position="HVCenter90" width="33.5" >Подп. и дата</stext>
+    <stext x1="10.5" y1="17.5" size="3.5" angle="90" position="HVCenter90" width="23.5" >Инв. № подл.</stext>
+    <vtext x1="16.5" y1="17.5" size="3.5" angle="90" position="HVCenter90" width="23.5" var="Графа 19 - Инвентарный номер подлинника"/>
+    <vtext x1="16.5" y1="48" size="3.5" angle="90" position="HVCenter90" width="33.5" var="Графа 20 - Подпись и дата приемки в СТД"/>
+    <vtext x1="16.5" y1="78" size="3.5" angle="90" position="HVCenter90" width="23.5" var="Графа 21 - Взам. инв №"/>
+    <vtext x1="16.5" y1="102.5" size="3.5" angle="90" position="HVCenter90" width="23.5" var="Графа 22 - Инвентарный номер дубликата"/>
+    <vtext x1="16.5" y1="132.5" size="3.5" angle="90" position="HVCenter90" width="33.5" var="Графа 23 - Подпись и дата приемки дубликата в СТД"/>
+  </block>
+  <block name="Top_block_List1">
+    <line x1="156" y1="-19" x2="156" y2="-5" width="Basicline" />
+    <line x1="104" y1="-12" x2="156" y2="-12" width="Basicline" />
+    <line x1="104" y1="-19" x2="104" y2="-5" width="Basicline" />
+    <line x1="90" y1="-5" x2="156" y2="-5" width="Basicline" />
+    <line x1="90" y1="-19" x2="156" y2="-19" width="Basicline" />
+  </block>
+  <block name="Top_block_List2">
+    <line x1="90" y1="-19" x2="90" y2="-5" width="Basicline" />
+    <line x1="20" y1="-19" x2="90" y2="-19" width="Basicline" />
+    <vtext x1="55" y1="-12" size="5" angle="180" position="HVCenter" width="70" var="Обозначение"/>
+  </block>
+  <block name="rz">
+    <line x1="-76" y1="-16" x2="-71" y2="-25" width="Basicline" />
+    <line x1="-71" y1="-25" x2="-63.4" y2="-11" width="Basicline" />
+    <line x1="-63.3" y1="-11" x2="-13" y2="-11" width="Basicline" />
+    <line x1="-28.3" y1="-17.9" x2="-25.2" y2="-23.3" width="Thinline" />
+    <line x1="-25.2" y1="-23.3" x2="-19.6" y2="-13.5" width="Thinline" />
+    <stext x1="-32" y1="-23.3" size="7" angle="0" position="">(</stext>
+    <stext x1="-21" y1="-23.3" size="7" angle="0" position="">)</stext>
+    <vtext x1="-63.3" y1="-23.3" size="7" angle="0" position="" var="#sher"/>
+  </block>
+
+  <block name="Title_block_List1_TextDocuments">
+    <line x1="-190" y1="5" x2="-190" y2="45" width="Basicline"/>
+    <line x1="-190" y1="10" x2="-125" y2="10" width="Thinline"/>
+    <line x1="-190" y1="15" x2="-125" y2="15" width="Thinline"/>
+    <line x1="-190" y1="20" x2="-125" y2="20" width="Thinline"/>
+    <line x1="-190" y1="25" x2="-125" y2="25" width="Thinline"/>
+    <line x1="-190" y1="30" x2="-5" y2="30" width="Basicline"/>
+    <line x1="-190" y1="35" x2="-125" y2="35" width="Basicline"/>
+    <line x1="-190" y1="40" x2="-125" y2="40" width="Thinline"/>
+    <line x1="-190" y1="45" x2="-5" y2="45" width="Basicline"/>
+    <line x1="-55" y1="20" x2="-5" y2="20" width="Basicline"/>
+    <line x1="-55" y1="25" x2="-5" y2="25" width="Basicline"/>
+    <line x1="-183" y1="30" x2="-183" y2="45" width="Basicline"/>
+    <line x1="-173" y1="5" x2="-173" y2="45" width="Basicline"/>
+    <line x1="-150" y1="5" x2="-150" y2="45" width="Basicline"/>
+    <line x1="-135" y1="5" x2="-135" y2="45" width="Basicline"/>
+    <line x1="-125" y1="5" x2="-125" y2="45" width="Basicline"/>
+    <line x1="-55" y1="5" x2="-55" y2="30" width="Basicline"/>
+    <line x1="-50" y1="20" x2="-50" y2="25" width="Thinline"/>
+    <line x1="-45" y1="20" x2="-45" y2="25" width="Thinline"/>
+    <line x1="-40" y1="20" x2="-40" y2="30" width="Basicline"/>
+    <line x1="-25" y1="20" x2="-25" y2="30" width="Basicline"/>
+
+    <stext x1="-47.5" y1="27.5" size="3.5" angle="0" position="HVCenter">Лит.</stext>
+    <stext x1="-52.5" y1="22.5" size="3.5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="П">П</stext>
+    <stext x1="-52.5" y1="22.5" size="3.5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="Э">Э</stext>
+    <stext x1="-52.5" y1="22.5" size="3.5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="Т">Т</stext>
+    <stext x1="-46.2" y1="21.5" size="1.8" angle="0" position="HVCenter" ifvar="Lit" ifvalue="О1">1</stext>
+    <stext x1="-46.2" y1="21.5" size="1.8" angle="0" position="HVCenter" ifvar="Lit" ifvalue="О2">2</stext>
+    <stext x1="-47.5" y1="22.5" size="3.5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="О">О</stext>
+    <stext x1="-48" y1="22.5" size="3.5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="О1">О</stext>
+    <stext x1="-48" y1="22.5" size="3.5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="О2">О</stext>
+    <stext x1="-42.5" y1="22.5" size="3.5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="А">А</stext>
+    <stext x1="-42.5" y1="22.5" size="3.5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="Б">Б</stext>
+    <stext x1="-42.5" y1="22.5" size="3.5" angle="0" position="HVCenter" ifvar="Lit" ifvalue="И">И</stext>
+
+    <stext x1="-114.467" y1="0.771" size="3.5" angle="0" position="">Копировал</stext>
+    <stext x1="-130" y1="32.5" size="3.5" angle="0" position="HVCenter" width="10">Дата</stext>
+
+    <stext x1="-142.5" y1="32.5" size="3.5" angle="0" position="HVCenter">Подп.</stext>
+    <stext x1="-161.25" y1="32.5" size="3.5" angle="0" position="HVCenter">№ докум.</stext>
+    <stext x1="-178" y1="32.5" size="3.5" angle="0" position="HVCenter" width="10" >Лист</stext>
+    <stext x1="-186.5" y1="32.5" size="3.5" angle="0" position="HVCenter" width="8">Изм.</stext>
+    <stext x1="-189.467" y1="25.771" size="3.5" angle="0" position="" width="17" >Разраб.</stext>
+    <stext x1="-189.467" y1="20.771" size="3.5" angle="0" position="" width="17" >Пров.</stext>
+    <vtext x1="-189.467" y1="15.771" size="3.5" angle="0" position="" width="17" var="Должность"/>
+    <stext x1="-189.467" y1="10.771" size="3.5" angle="0" position="" width="17" >Н.контр.</stext>
+    <stext x1="-189.467" y1="5.771" size="3.5" angle="0" position="" width="17" >Утв.</stext>
+
+    <stext x1="-32.5" y1="27.5" size="3.5" angle="0" position="HVCenter">Лист</stext>
+    <vtext x1="-32.5" y1="22.5" size="3.5" angle="0" position="HVCenter" var="#pageNumber"/>
+
+    <stext x1="-15" y1="27.5" size="3.5" angle="0" position="HVCenter">Листов</stext>
+    <vtext x1="-15" y1="22.5" size="3.5" angle="0" position="HVCenter" var="#pageCount"/>
+
+    <vtext x1="-25" y1="0.771" size="3.5" angle="0" position="HCenter" var="#format"/>
+
+    <vtext x1="-143" y1="25.771" size="3.5" angle="0" position="HCenter" width="15" var="Графа 12 - Подпись"/>
+    <vtext x1="-143" y1="20.771" size="3.5" angle="0" position="HCenter" width="15" var="Графа 12 - Подпись"/>
+    <vtext x1="-143" y1="15.771" size="3.5" angle="0" position="HCenter" width="15" var="Графа 12 - Подпись" ifvar="Начальник отдела" ifvalue="notempty"/>
+    <vtext x1="-143" y1="10.771" size="3.5" angle="0" position="HCenter" width="15" var="Графа 12 - Подпись"/>
+    <vtext x1="-143" y1="5.771" size="3.5" angle="0" position="HCenter" width="15" var="Графа 12 - Подпись"/>
+
+    <vtext x1="-172.32" y1="25.771" size="3.5" angle="0" position="" width="23" var="Разработал"/>
+    <vtext x1="-172.32" y1="20.771" size="3.5" angle="0" position="" width="23" var="Проверил"/>
+    <vtext x1="-172.32" y1="15.771" size="3.5" angle="0" position="" width="23" var="Начальник отдела"/>
+    <vtext x1="-172.32" y1="10.771" size="3.5" angle="0" position="" width="23" var="Нормоконтроль"/>
+    <vtext x1="-172.32" y1="5.771" size="3.5" angle="0" position="" width="23" var="Утвердил"/>
+    <vtext x1="-65" y1="37.5" size="5" angle="0" position="HVCenter" width="120" var="Обозначение"/>
+    <vtext x1="-90" y1="22" size="5" angle="0" position="HVCenter" width="70" var="Наименование"/>
+    <vtext x1="-90" y1="25" size="5" angle="0" position="HVCenter" width="70" var="Наименование1"/>
+	  <vtext x1="-90" y1="19" size="5" angle="0" position="HVCenter" width="70" var="Наименование2"/>
+    <vtext x1="-90" y1="12.5" size="3.5" angle="0" position="HVCenter" width="70" var="ТипДокумента"/>
+  
+    <vtext x1="-30" y1="12.5" size="5" angle="0" position="HVCenter" width="50" var="Компания"/>
+	<vtext x1="-30" y1="15.5" size="5" angle="0" position="HVCenter" width="50" var="Компания1"/>
+	<vtext x1="-30" y1="9.5" size="5" angle="0" position="HVCenter" width="50" var="Компания2"/>
+    <vtext x1="-187" y1="37.5" size="3.5" angle="0" position="HVCenter" width="8" var="Графа 14 - Порядковый номер изменения"/>
+    <vtext x1="-178.5" y1="37.5" size="3.5" angle="0" position="HVCenter" width="10" var="Графа 15 - Указания об изменении листа"/>
+    <vtext x1="-162" y1="37.5" size="3.5" angle="0" position="HVCenter" width="23.5" var="Графа 16 - Номер извещения"/>
+    <vtext x1="-142.5" y1="37.5" size="3.5" angle="0" position="HVCenter" var="Графа 17"/>
+    <vtext x1="-130" y1="37.5" size="3.5" angle="0" position="HVCenter" var="Графа 18"/>       
+  </block>
+  <block name="Title_block_List1vp_TextDocuments">
+    <line x1="-125" y1="0" x2="-125" y2="22" width="Basicline" />
+    <line x1="-111" y1="8" x2="-111" y2="22" width="Basicline" />
+    <line x1="-58" y1="8" x2="-58" y2="22" width="Basicline" />
+    <line x1="-125" y1="8" x2="-5" y2="8" width="Basicline" />
+    <line x1="-125" y1="22" x2="-5" y2="22" width="Basicline" />
+
+    <vtext x1="-118" y1="15" size="3.5" angle="0" position="HVCenter" width="51" var="Графа 27"/>
+    <vtext x1="-84.5" y1="15" size="3.5" angle="0" position="HVCenter" width="51" var="Графа 28 - Номер и год утверждения литеры"/>
+    <vtext x1="-31.5" y1="15" size="3.5" angle="0" position="HVCenter" width="51" var="Графа 29 - Номер и год утверждения документации"/>
+    <vtext x1="-60" y1="4" size="3.5" angle="0" position="HVCenter" width="118" var="Графа 30 - Индекс заказчика"/>
+  </block>
+    
+  <block name="Lines_A4_PE_3lines_List1">
+    <line x1="20" y1="69" x2="205" y2="69" width="Thinline"/>
+    <line x1="20" y1="61" x2="205" y2="61" width="Thinline"/>
+    <line x1="20" y1="53" x2="205" y2="53" width="Thinline"/>
+    <line x1="40" y1="53"  x2="40" y2="77"  width="Basicline"/>
+    <line x1="150" y1="53" x2="150" y2="77" width="Basicline"/>
+    <line x1="160" y1="53" x2="160" y2="77" width="Basicline"/>
+  </block>
+  <block name="Lines_A4_PE_25lines_List1">
+    <line x1="20" y1="269" x2="205" y2="269" width="Thinline"/>
+    <line x1="20" y1="261" x2="205" y2="261" width="Thinline"/>
+    <line x1="20" y1="253" x2="205" y2="253" width="Thinline"/>
+    <line x1="20" y1="245" x2="205" y2="245" width="Thinline"/>
+    <line x1="20" y1="237" x2="205" y2="237" width="Thinline"/>
+    <line x1="20" y1="229" x2="205" y2="229" width="Thinline"/>
+    <line x1="20" y1="221" x2="205" y2="221" width="Thinline"/>
+    <line x1="20" y1="213" x2="205" y2="213" width="Thinline"/>
+    <line x1="20" y1="205" x2="205" y2="205" width="Thinline"/>
+    <line x1="20" y1="197" x2="205" y2="197" width="Thinline"/>
+    <line x1="20" y1="189" x2="205" y2="189" width="Thinline"/>
+    <line x1="20" y1="181" x2="205" y2="181" width="Thinline"/>
+    <line x1="20" y1="173" x2="205" y2="173" width="Thinline"/>
+    <line x1="20" y1="165" x2="205" y2="165" width="Thinline"/>
+    <line x1="20" y1="157" x2="205" y2="157" width="Thinline"/>
+    <line x1="20" y1="149" x2="205" y2="149" width="Thinline"/>
+    <line x1="20" y1="141" x2="205" y2="141" width="Thinline"/>
+    <line x1="20" y1="133" x2="205" y2="133" width="Thinline"/>
+    <line x1="20" y1="125" x2="205" y2="125" width="Thinline"/>
+    <line x1="20" y1="117" x2="205" y2="117" width="Thinline"/>
+    <line x1="20" y1="109" x2="205" y2="109" width="Thinline"/>
+    <line x1="20" y1="101" x2="205" y2="101" width="Thinline"/>
+    <line x1="20" y1="93" x2="205" y2="93" width="Thinline"/>
+    <line x1="20" y1="85" x2="205" y2="85" width="Thinline"/>
+    <line x1="20" y1="77" x2="205" y2="77" width="Thinline"/>
+    <line x1="40" y1="77" x2="40" y2="277" width="Basicline"/>
+    <line x1="150" y1="77" x2="150" y2="277" width="Basicline"/>
+    <line x1="160" y1="77" x2="160" y2="277" width="Basicline"/>
+  </block>
+
+  <block name="Lines_A4_SP_3lines_List1">
+    <line x1="20" y1="69" x2="205" y2="69" width="Thinline"/> 
+    <line x1="20" y1="61" x2="205" y2="61" width="Thinline"/>
+    <line x1="20" y1="53" x2="205" y2="53" width="Thinline"/>
+    <line x1="26" y1="53" x2="26" y2="77" width="Basicline"/>
+    <line x1="32" y1="53" x2="32" y2="77" width="Basicline"/>
+    <line x1="40" y1="53" x2="40" y2="77" width="Basicline"/>
+    <line x1="110" y1="53" x2="110" y2="77" width="Basicline"/>
+    <line x1="173" y1="53" x2="173" y2="77" width="Basicline"/>
+    <line x1="183" y1="53" x2="183" y2="77" width="Basicline"/>
+  </block>
+  <block name="Lines_A4_SP_25lines_List1">
+    <line x1="20" y1="269" x2="205" y2="269" width="Thinline"/>
+    <line x1="20" y1="261" x2="205" y2="261" width="Thinline"/>
+    <line x1="20" y1="253" x2="205" y2="253" width="Thinline"/>
+    <line x1="20" y1="245" x2="205" y2="245" width="Thinline"/>
+    <line x1="20" y1="237" x2="205" y2="237" width="Thinline"/>
+    <line x1="20" y1="229" x2="205" y2="229" width="Thinline"/>
+    <line x1="20" y1="221" x2="205" y2="221" width="Thinline"/>
+    <line x1="20" y1="213" x2="205" y2="213" width="Thinline"/>
+    <line x1="20" y1="205" x2="205" y2="205" width="Thinline"/>
+    <line x1="20" y1="197" x2="205" y2="197" width="Thinline"/>
+    <line x1="20" y1="189" x2="205" y2="189" width="Thinline"/>
+    <line x1="20" y1="181" x2="205" y2="181" width="Thinline"/>
+    <line x1="20" y1="173" x2="205" y2="173" width="Thinline"/>
+    <line x1="20" y1="165" x2="205" y2="165" width="Thinline"/>
+    <line x1="20" y1="157" x2="205" y2="157" width="Thinline"/>
+    <line x1="20" y1="149" x2="205" y2="149" width="Thinline"/>
+    <line x1="20" y1="141" x2="205" y2="141" width="Thinline"/>
+    <line x1="20" y1="133" x2="205" y2="133" width="Thinline"/>
+    <line x1="20" y1="125" x2="205" y2="125" width="Thinline"/>
+    <line x1="20" y1="117" x2="205" y2="117" width="Thinline"/>
+    <line x1="20" y1="109" x2="205" y2="109" width="Thinline"/>
+    <line x1="20" y1="101" x2="205" y2="101" width="Thinline"/>
+    <line x1="20" y1="93" x2="205" y2="93" width="Thinline"/>
+    <line x1="20" y1="85" x2="205" y2="85" width="Thinline"/>
+    <line x1="20" y1="77" x2="205" y2="77" width="Thinline"/>
+    <line x1="26" y1="77" x2="26" y2="277" width="Basicline"/>
+    <line x1="32" y1="77" x2="32" y2="277" width="Basicline"/>
+    <line x1="40" y1="77" x2="40" y2="277" width="Basicline"/>
+    <line x1="110" y1="77" x2="110" y2="277" width="Basicline"/>
+    <line x1="173" y1="77" x2="173" y2="277" width="Basicline"/>
+    <line x1="183" y1="77" x2="183" y2="277" width="Basicline"/>
+  </block>
+
+  <block name="Lines_A4_PE_List2">
+    <line x1="20" y1="269" x2="205" y2="269" width="Thinline"/>
+    <line x1="20" y1="261" x2="205" y2="261" width="Thinline"/>
+    <line x1="20" y1="253" x2="205" y2="253" width="Thinline"/>
+    <line x1="20" y1="245" x2="205" y2="245" width="Thinline"/>
+    <line x1="20" y1="237" x2="205" y2="237" width="Thinline"/>
+    <line x1="20" y1="229" x2="205" y2="229" width="Thinline"/>
+    <line x1="20" y1="221" x2="205" y2="221" width="Thinline"/>
+    <line x1="20" y1="213" x2="205" y2="213" width="Thinline"/>
+    <line x1="20" y1="205" x2="205" y2="205" width="Thinline"/>
+    <line x1="20" y1="197" x2="205" y2="197" width="Thinline"/>
+    <line x1="20" y1="189" x2="205" y2="189" width="Thinline"/>
+    <line x1="20" y1="181" x2="205" y2="181" width="Thinline"/>
+    <line x1="20" y1="173" x2="205" y2="173" width="Thinline"/>
+    <line x1="20" y1="165" x2="205" y2="165" width="Thinline"/>
+    <line x1="20" y1="157" x2="205" y2="157" width="Thinline"/>
+    <line x1="20" y1="149" x2="205" y2="149" width="Thinline"/>
+    <line x1="20" y1="141" x2="205" y2="141" width="Thinline"/>
+    <line x1="20" y1="133" x2="205" y2="133" width="Thinline"/>
+    <line x1="20" y1="125" x2="205" y2="125" width="Thinline"/>
+    <line x1="20" y1="117" x2="205" y2="117" width="Thinline"/>
+    <line x1="20" y1="109" x2="205" y2="109" width="Thinline"/>
+    <line x1="20" y1="101" x2="205" y2="101" width="Thinline"/>
+    <line x1="20" y1="93" x2="205" y2="93" width="Thinline"/>
+    <line x1="20" y1="85" x2="205" y2="85" width="Thinline"/>
+    <line x1="20" y1="77" x2="205" y2="77" width="Thinline"/>
+    <line x1="20" y1="69" x2="205" y2="69" width="Thinline"/>
+    <line x1="20" y1="61" x2="205" y2="61" width="Thinline"/>
+    <line x1="20" y1="53" x2="205" y2="53" width="Thinline"/>
+    <line x1="20" y1="45" x2="205" y2="45" width="Thinline"/>
+    <line x1="20" y1="37" x2="205" y2="37" width="Thinline"/>
+    <line x1="20" y1="29" x2="205" y2="29" width="Thinline"/>
+    <line x1="40" y1="29" x2="40" y2="277" width="Basicline"/>
+    <line x1="150" y1="29" x2="150" y2="277" width="Basicline"/>
+    <line x1="160" y1="29" x2="160" y2="277" width="Basicline"/> 
+  </block>
+  <block name="Lines_A4_SP_List2">
+    <line x1="20" y1="269" x2="205" y2="269" width="Thinline"/>
+    <line x1="20" y1="261" x2="205" y2="261" width="Thinline"/>
+    <line x1="20" y1="253" x2="205" y2="253" width="Thinline"/>
+    <line x1="20" y1="245" x2="205" y2="245" width="Thinline"/>
+    <line x1="20" y1="237" x2="205" y2="237" width="Thinline"/>
+    <line x1="20" y1="229" x2="205" y2="229" width="Thinline"/>
+    <line x1="20" y1="221" x2="205" y2="221" width="Thinline"/>
+    <line x1="20" y1="213" x2="205" y2="213" width="Thinline"/>
+    <line x1="20" y1="205" x2="205" y2="205" width="Thinline"/>
+    <line x1="20" y1="197" x2="205" y2="197" width="Thinline"/>
+    <line x1="20" y1="189" x2="205" y2="189" width="Thinline"/>
+    <line x1="20" y1="181" x2="205" y2="181" width="Thinline"/>
+    <line x1="20" y1="173" x2="205" y2="173" width="Thinline"/>
+    <line x1="20" y1="165" x2="205" y2="165" width="Thinline"/>
+    <line x1="20" y1="157" x2="205" y2="157" width="Thinline"/>
+    <line x1="20" y1="149" x2="205" y2="149" width="Thinline"/>
+    <line x1="20" y1="141" x2="205" y2="141" width="Thinline"/>
+    <line x1="20" y1="133" x2="205" y2="133" width="Thinline"/>
+    <line x1="20" y1="125" x2="205" y2="125" width="Thinline"/>
+    <line x1="20" y1="117" x2="205" y2="117" width="Thinline"/>
+    <line x1="20" y1="109" x2="205" y2="109" width="Thinline"/>
+    <line x1="20" y1="101" x2="205" y2="101" width="Thinline"/>
+    <line x1="20" y1="93" x2="205" y2="93" width="Thinline"/>
+    <line x1="20" y1="85" x2="205" y2="85" width="Thinline"/>
+    <line x1="20" y1="77" x2="205" y2="77" width="Thinline"/>
+    <line x1="20" y1="69" x2="205" y2="69" width="Thinline"/>
+    <line x1="20" y1="61" x2="205" y2="61" width="Thinline"/>
+    <line x1="20" y1="53" x2="205" y2="53" width="Thinline"/>
+    <line x1="20" y1="45" x2="205" y2="45" width="Thinline"/>
+    <line x1="20" y1="37" x2="205" y2="37" width="Thinline"/>
+    <line x1="20" y1="29" x2="205" y2="29" width="Thinline"/>
+    <line x1="26" y1="29" x2="26" y2="277" width="Basicline"/>
+    <line x1="32" y1="29" x2="32" y2="277" width="Basicline"/>
+    <line x1="40" y1="29" x2="40" y2="277" width="Basicline"/>
+    <line x1="110" y1="29" x2="110" y2="277" width="Basicline"/>
+    <line x1="173" y1="29" x2="173" y2="277" width="Basicline"/>
+    <line x1="183" y1="29" x2="183" y2="277" width="Basicline"/>
+  </block>
+
+  <block name="Lines_A3_List1">
+    <stext x1="23.5" y1="261" size="3.5" angle="0" position="HVCenter">1</stext>
+    <stext x1="23.5" y1="253" size="3.5" angle="0" position="HVCenter">2</stext>
+    <stext x1="23.5" y1="245" size="3.5" angle="0" position="HVCenter">3</stext>
+    <stext x1="23.5" y1="237" size="3.5" angle="0" position="HVCenter">4</stext>
+    <stext x1="23.5" y1="229" size="3.5" angle="0" position="HVCenter">5</stext>
+    <stext x1="23.5" y1="221" size="3.5" angle="0" position="HVCenter">6</stext>
+    <stext x1="23.5" y1="213" size="3.5" angle="0" position="HVCenter">7</stext>
+    <stext x1="23.5" y1="205" size="3.5" angle="0" position="HVCenter">8</stext>
+    <stext x1="23.5" y1="197" size="3.5" angle="0" position="HVCenter">9</stext>
+    <stext x1="23.5" y1="189" size="3.5" angle="0" position="HVCenter">10</stext>
+    <stext x1="23.5" y1="181" size="3.5" angle="0" position="HVCenter">11</stext>
+    <stext x1="23.5" y1="173" size="3.5" angle="0" position="HVCenter">12</stext>
+    <stext x1="23.5" y1="165" size="3.5" angle="0" position="HVCenter">13</stext>
+    <stext x1="23.5" y1="157" size="3.5" angle="0" position="HVCenter">14</stext>
+    <stext x1="23.5" y1="149" size="3.5" angle="0" position="HVCenter">15</stext>
+    <stext x1="23.5" y1="141" size="3.5" angle="0" position="HVCenter">16</stext>
+    <stext x1="23.5" y1="133" size="3.5" angle="0" position="HVCenter">17</stext>
+    <stext x1="23.5" y1="125" size="3.5" angle="0" position="HVCenter">18</stext>
+    <stext x1="23.5" y1="117" size="3.5" angle="0" position="HVCenter">19</stext>
+    <stext x1="23.5" y1="109" size="3.5" angle="0" position="HVCenter">20</stext>
+    <stext x1="23.5" y1="101" size="3.5" angle="0" position="HVCenter">21</stext>
+    <stext x1="23.5" y1="93" size="3.5" angle="0" position="HVCenter">22</stext>
+    <stext x1="23.5" y1="85" size="3.5" angle="0" position="HVCenter">23</stext>
+    <stext x1="23.5" y1="77" size="3.5" angle="0" position="HVCenter">24</stext>
+    <line x1="20" y1="73" x2="415" y2="73" width="Thinline"/>
+    <line x1="20" y1="81" x2="415" y2="81" width="Thinline"/>
+    <line x1="20" y1="89" x2="415" y2="89" width="Thinline"/>
+    <line x1="20" y1="97" x2="415" y2="97" width="Thinline"/>
+    <line x1="20" y1="105" x2="415" y2="105" width="Thinline"/>
+    <line x1="20" y1="113" x2="415" y2="113" width="Thinline"/>
+    <line x1="20" y1="121" x2="415" y2="121" width="Thinline"/>
+    <line x1="20" y1="129" x2="415" y2="129" width="Thinline"/>
+    <line x1="20" y1="137" x2="415" y2="137" width="Thinline"/>
+    <line x1="20" y1="145" x2="415" y2="145" width="Thinline"/>
+    <line x1="20" y1="153" x2="415" y2="153" width="Thinline"/>
+    <line x1="20" y1="161" x2="415" y2="161" width="Thinline"/>
+    <line x1="20" y1="169" x2="415" y2="169" width="Thinline"/>
+    <line x1="20" y1="177" x2="415" y2="177" width="Thinline"/>
+    <line x1="20" y1="185" x2="415" y2="185" width="Thinline"/>
+    <line x1="20" y1="193" x2="415" y2="193" width="Thinline"/>
+    <line x1="20" y1="201" x2="415" y2="201" width="Thinline"/>
+    <line x1="20" y1="209" x2="415" y2="209" width="Thinline"/>
+    <line x1="20" y1="217" x2="415" y2="217" width="Thinline"/>
+    <line x1="20" y1="225" x2="415" y2="225" width="Thinline"/>
+    <line x1="20" y1="233" x2="415" y2="233" width="Thinline"/>
+    <line x1="20" y1="241" x2="415" y2="241" width="Thinline"/>
+    <line x1="20" y1="249" x2="415" y2="249" width="Thinline"/>
+    <line x1="20" y1="257" x2="415" y2="257" width="Thinline"/>
+    <line x1="27" y1="73" x2="27" y2="265" width="Basicline" />
+    <line x1="87" y1="73" x2="87" y2="265" width="Basicline" />
+    <line x1="132" y1="73" x2="132" y2="265" width="Basicline" />
+    <line x1="202" y1="73" x2="202" y2="265" width="Basicline" />
+    <line x1="257" y1="73" x2="257" y2="265" width="Basicline" />
+    <line x1="327" y1="73" x2="327" y2="265" width="Basicline" />
+    <line x1="343" y1="73" x2="343" y2="265" width="Basicline" />
+    <line x1="359" y1="73" x2="359" y2="265" width="Basicline" />
+    <line x1="375" y1="73" x2="375" y2="265" width="Basicline" />
+    <line x1="391" y1="73" x2="391" y2="265" width="Basicline" />
+  </block>
+  <block name="Lines_A3_List2">
+    <line x1="20" y1="5" x2="20" y2="292" width="Basicline" />
+    <line x1="20" y1="292" x2="415" y2="292" width="Basicline" />
+    <line x1="415" y1="292" x2="415" y2="5" width="Basicline" />
+    <line x1="415" y1="5" x2="20" y2="5" width="Basicline" />
+    <stext x1="23.5" y1="261" size="3.5" angle="0" position="HVCenter">1</stext>
+    <stext x1="23.5" y1="253" size="3.5" angle="0" position="HVCenter">2</stext>
+    <stext x1="23.5" y1="245" size="3.5" angle="0" position="HVCenter">3</stext>
+    <stext x1="23.5" y1="237" size="3.5" angle="0" position="HVCenter">4</stext>
+    <stext x1="23.5" y1="229" size="3.5" angle="0" position="HVCenter">5</stext>
+    <stext x1="23.5" y1="221" size="3.5" angle="0" position="HVCenter">6</stext>
+    <stext x1="23.5" y1="213" size="3.5" angle="0" position="HVCenter">7</stext>
+    <stext x1="23.5" y1="205" size="3.5" angle="0" position="HVCenter">8</stext>
+    <stext x1="23.5" y1="197" size="3.5" angle="0" position="HVCenter">9</stext>
+    <stext x1="23.5" y1="189" size="3.5" angle="0" position="HVCenter">10</stext>
+    <stext x1="23.5" y1="181" size="3.5" angle="0" position="HVCenter">11</stext>
+    <stext x1="23.5" y1="173" size="3.5" angle="0" position="HVCenter">12</stext>
+    <stext x1="23.5" y1="165" size="3.5" angle="0" position="HVCenter">13</stext>
+    <stext x1="23.5" y1="157" size="3.5" angle="0" position="HVCenter">14</stext>
+    <stext x1="23.5" y1="149" size="3.5" angle="0" position="HVCenter">15</stext>
+    <stext x1="23.5" y1="141" size="3.5" angle="0" position="HVCenter">16</stext>
+    <stext x1="23.5" y1="133" size="3.5" angle="0" position="HVCenter">17</stext>
+    <stext x1="23.5" y1="125" size="3.5" angle="0" position="HVCenter">18</stext>
+    <stext x1="23.5" y1="117" size="3.5" angle="0" position="HVCenter">19</stext>
+    <stext x1="23.5" y1="109" size="3.5" angle="0" position="HVCenter">20</stext>
+    <stext x1="23.5" y1="101" size="3.5" angle="0" position="HVCenter">21</stext>
+    <stext x1="23.5" y1="93" size="3.5" angle="0" position="HVCenter">22</stext>
+    <stext x1="23.5" y1="85" size="3.5" angle="0" position="HVCenter">23</stext>
+    <stext x1="23.5" y1="77" size="3.5" angle="0" position="HVCenter">24</stext>
+    <stext x1="23.5" y1="69" size="3.5" angle="0" position="HVCenter">25</stext>
+    <stext x1="23.5" y1="61" size="3.5" angle="0" position="HVCenter">26</stext>
+    <stext x1="23.5" y1="53" size="3.5" angle="0" position="HVCenter">27</stext>
+    <stext x1="23.5" y1="45" size="3.5" angle="0" position="HVCenter">28</stext>
+    <stext x1="23.5" y1="37" size="3.5" angle="0" position="HVCenter">29</stext>
+    <line x1="20" y1="33" x2="415" y2="33" width="Thinline"/>
+    <line x1="20" y1="41" x2="415" y2="41" width="Thinline"/>
+    <line x1="20" y1="49" x2="415" y2="49" width="Thinline"/>
+    <line x1="20" y1="57" x2="415" y2="57" width="Thinline"/>
+    <line x1="20" y1="65" x2="415" y2="65" width="Thinline"/>
+    <line x1="20" y1="73" x2="415" y2="73" width="Thinline"/>
+    <line x1="20" y1="81" x2="415" y2="81" width="Thinline"/>
+    <line x1="20" y1="89" x2="415" y2="89" width="Thinline"/>
+    <line x1="20" y1="97" x2="415" y2="97" width="Thinline"/>
+    <line x1="20" y1="105" x2="415" y2="105" width="Thinline"/>
+    <line x1="20" y1="113" x2="415" y2="113" width="Thinline"/>
+    <line x1="20" y1="121" x2="415" y2="121" width="Thinline"/>
+    <line x1="20" y1="129" x2="415" y2="129" width="Thinline"/>
+    <line x1="20" y1="137" x2="415" y2="137" width="Thinline"/>
+    <line x1="20" y1="145" x2="415" y2="145" width="Thinline"/>
+    <line x1="20" y1="153" x2="415" y2="153" width="Thinline"/>
+    <line x1="20" y1="161" x2="415" y2="161" width="Thinline"/>
+    <line x1="20" y1="169" x2="415" y2="169" width="Thinline"/>
+    <line x1="20" y1="177" x2="415" y2="177" width="Thinline"/>
+    <line x1="20" y1="185" x2="415" y2="185" width="Thinline"/>
+    <line x1="20" y1="193" x2="415" y2="193" width="Thinline"/>
+    <line x1="20" y1="201" x2="415" y2="201" width="Thinline"/>
+    <line x1="20" y1="209" x2="415" y2="209" width="Thinline"/>
+    <line x1="20" y1="217" x2="415" y2="217" width="Thinline"/>
+    <line x1="20" y1="225" x2="415" y2="225" width="Thinline"/>
+    <line x1="20" y1="233" x2="415" y2="233" width="Thinline"/>
+    <line x1="20" y1="241" x2="415" y2="241" width="Thinline"/>
+    <line x1="20" y1="249" x2="415" y2="249" width="Thinline"/>
+    <line x1="20" y1="257" x2="415" y2="257" width="Thinline"/>
+    <line x1="27" y1="33" x2="27" y2="265" width="Basicline" />
+    <line x1="87" y1="33" x2="87" y2="265" width="Basicline" />
+    <line x1="132" y1="33" x2="132" y2="265" width="Basicline" />
+    <line x1="202" y1="33" x2="202" y2="265" width="Basicline" />
+    <line x1="257" y1="33" x2="257" y2="265" width="Basicline" />
+    <line x1="327" y1="33" x2="327" y2="265" width="Basicline" />
+    <line x1="343" y1="33" x2="343" y2="265" width="Basicline" />
+    <line x1="359" y1="33" x2="359" y2="265" width="Basicline" />
+    <line x1="375" y1="33" x2="375" y2="265" width="Basicline" />
+    <line x1="391" y1="33" x2="391" y2="265" width="Basicline" />
+  </block>
+
+  <block name="Top_block_PE">
+    <stext x1="30" y1="-7.5" size="3.5" angle="0" position="HVCenter">Поз.</stext>
+    <stext x1="30" y1="-12.5" size="3.5" angle="0" position="HVCenter">обозна-</stext>
+    <stext x1="30" y1="-17.5" size="3.5" angle="0" position="HVCenter">чение</stext>
+    <stext x1="95" y1="-12.5" size="3.5" angle="0" position="HVCenter">Наименование</stext>
+    <stext x1="155" y1="-12.5" size="3.5" angle="0" position="HVCenter">Кол.</stext>
+    <stext x1="182.5" y1="-12.5" size="3.5" angle="0" position="HVCenter">Примечание</stext>
+    <line x1="20" y1="-20" x2="205" y2="-20" width="Basicline"/>
+    <line x1="40" y1="-5" x2="40" y2="-20" width="Basicline"/>
+    <line x1="150" y1="-5" x2="150" y2="-20" width="Basicline"/>
+    <line x1="160" y1="-5" x2="160" y2="-20" width="Basicline"/>
+  </block>
+  <block name="Top_block_SP">
+    <stext x1="23" y1="-13" size="3.5" angle="90" width="16" position="HVCenter">Формат</stext>
+    <stext x1="29" y1="-12.5" size="3.5" angle="90" position="HVCenter">Зона</stext>
+    <stext x1="36" y1="-12.5" size="3.5" angle="90" position="HVCenter">Поз.</stext>
+    <stext x1="75" y1="-12.5" size="3.5" angle="0" position="HVCenter">Обозначение</stext>
+    <stext x1="141.5" y1="-12.5" size="3.5" angle="0" position="HVCenter">Наименование</stext>
+    <stext x1="178" y1="-12.5" size="3.5" angle="90" position="HVCenter">Кол.</stext>
+    <stext x1="194" y1="-10" size="3.5" angle="0" position="HVCenter">Приме-</stext>
+    <stext x1="194" y1="-15" size="3.5" angle="0" position="HVCenter">чание</stext>
+    <line x1="26" y1="-5" x2="26" y2="-20" width="Basicline"/>
+    <line x1="32" y1="-5" x2="32" y2="-20" width="Basicline"/>
+    <line x1="40" y1="-5" x2="40" y2="-20" width="Basicline"/>
+    <line x1="110" y1="-5" x2="110" y2="-20" width="Basicline"/>
+    <line x1="173" y1="-5" x2="173" y2="-20" width="Basicline"/>
+    <line x1="183" y1="-5" x2="183" y2="-20" width="Basicline"/>
+    <line x1="20" y1="-20" x2="205" y2="-20" width="Basicline"/>
+  </block>
+  <block name="Top_block_VP">
+    <stext x1="23.5" y1="-18.5" size="3.5" angle="90" position="HVCenter">№ строки</stext>
+    <stext x1="57" y1="-18.5" size="5" angle="0" position="HVCenter">Наименование</stext>
+    <stext x1="109.5" y1="-14" size="5" angle="0" position="HVCenter">Код</stext>
+    <stext x1="109.5" y1="-23" size="5" angle="0" position="HVCenter">продукции</stext>
+    <stext x1="167" y1="-14" size="5" angle="0" width="70" position="HVCenter">Обозначение документа</stext>
+    <stext x1="167" y1="-23" size="5" angle="0" position="HVCenter">на поставку</stext>
+    <stext x1="229.5" y1="-18.5" size="5" angle="0" position="HVCenter">Поставщик</stext>
+    <stext x1="292" y1="-14" size="5" angle="0" position="HVCenter">Куда входит</stext>
+    <stext x1="292" y1="-23" size="5" angle="0" position="HVCenter">(обозначение)</stext>
+    <stext x1="359" y1="-9.5" size="5" angle="0" position="HVCenter">Количество</stext>
+    <stext x1="335" y1="-20" size="3.5" angle="0" position="HVCenter">на из-</stext>
+    <stext x1="335" y1="-26" size="3.5" angle="0" position="HVCenter">делие</stext>
+    <stext x1="351" y1="-20" size="3.5" angle="0" position="HVCenter">в комп-</stext>
+    <stext x1="351" y1="-26" size="3.5" angle="0" position="HVCenter">лекты</stext>
+    <stext x1="367" y1="-20" size="3.5" angle="0" position="HVCenter">на ре-</stext>
+    <stext x1="367" y1="-26" size="3.5" angle="0" position="HVCenter">гулир.</stext>
+    <stext x1="383" y1="-23" size="5" angle="0" width="16" position="HVCenter">Всего</stext>
+    <stext x1="403" y1="-14" size="5" angle="0" width="24" position="HVCenter">Приме-</stext>
+    <stext x1="403" y1="-23" size="5" angle="0" position="HVCenter">чание</stext>
+    <line x1="327" y1="-14" x2="391" y2="-14" width="Basicline"/>
+    <line x1="20" y1="-32" x2="415" y2="-32" width="Basicline"/>
+    <line x1="27" y1="-32" x2="27" y2="-5" width="Basicline" />
+    <line x1="87" y1="-32" x2="87" y2="-5" width="Basicline" />
+    <line x1="132" y1="-32" x2="132" y2="-5" width="Basicline" />
+    <line x1="202" y1="-32" x2="202" y2="-5" width="Basicline" />
+    <line x1="257" y1="-32" x2="257" y2="-5" width="Basicline" />
+    <line x1="327" y1="-32" x2="327" y2="-5" width="Basicline" />
+    <line x1="343" y1="-32" x2="343" y2="-14" width="Basicline" />
+    <line x1="359" y1="-32" x2="359" y2="-14" width="Basicline" />
+    <line x1="375" y1="-32" x2="375" y2="-14" width="Basicline" />
+    <line x1="391" y1="-32" x2="391" y2="-5" width="Basicline" />
+  </block>
+</templates>
