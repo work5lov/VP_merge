@@ -23,7 +23,7 @@
 #include <QtPrintSupport/QPrintDialog>
 #include <QPageSize>
 
-//#include "painterprinter.h"
+#include "painterprinter.h"
 
 //for tables
 #include "xlsxdocument.h"
@@ -32,6 +32,12 @@
 #include "xlsxchart.h"
 #include "xlsxrichstring.h"
 #include "xlsxworkbook.h"
+
+#include "Structures.h"
+//#include "perechenDrwingConstants.h"
+//#include "specificationDrwingContants.h"
+//#include "lriDrwingConstants.h"
+//#include "vedomostDrwingConstants.h"
 
 //#include <QOpenGLWidget>
 //#include <QOpenGLFunctions>
@@ -124,7 +130,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-//    painterPrinter *pp;
+    painterPrinter *pp;
 
     int _xOffsetPE, _yOffsetPE, _xOffsetSP, _yOffsetSP, _xOffsetVP, _yOffsetVP;
 //    OGLWidget *oGL;

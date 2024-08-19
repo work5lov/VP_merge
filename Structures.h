@@ -1,7 +1,9 @@
 #ifndef STRUCTURES_H
 #define STRUCTURES_H
 
-#include <QMainWindow>
+//#include <QMainWindow>
+#include <QString>
+#include <QList>
 
 struct peline {
     QString num;

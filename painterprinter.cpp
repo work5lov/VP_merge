@@ -115,7 +115,7 @@ void painterPrinter::drawSquarePrint(QPainter &painter, const QVector<double> &s
     painter.drawLine(width, height, x, y);
 }
 
-void painterPrinter::drawText(QPainter &painter, const TextElement &textElements, bool xMirror, bool yMirror, double marginX, double marginY){
+void painterPrinter::drawText(QPainter &painter, const TextElement1 &textElements, bool xMirror, bool yMirror, double marginX, double marginY){
     painter.translate(mm_to_points(marginX),mm_to_points(marginY));
     double signX = 1;
     double signY = 1;
@@ -153,7 +153,7 @@ void painterPrinter::drawText(QPainter &painter, const TextElement &textElements
     painter.translate(mm_to_points(-marginX),mm_to_points(-marginY));
 }
 
-void painterPrinter::drawTextInCenter(QPainter &painter, const QRect &rect, const TextElement &textElements)
+void painterPrinter::drawTextInCenter(QPainter &painter, const QRect &rect, const TextElement1 &textElements)
 {
     QString text = textElements.content;
     QFont font("GOST type B", mm_to_points(textElements.size)); // Настраиваем шрифт по желанию
@@ -231,7 +231,7 @@ void painterPrinter::drawTextTitle(QPainter &painter, const QRect &rect, const Q
     painter.drawText(QRect(x, y, textRect.width(), textRect.height()), Qt::AlignLeft, text);
 }
 
-void painterPrinter::drawTextPrint(QPainter &painter, const TextElement &textElements, bool xMirror, bool yMirror, double marginX, double marginY){
+void painterPrinter::drawTextPrint(QPainter &painter, const TextElement1 &textElements, bool xMirror, bool yMirror, double marginX, double marginY){
     painter.translate(mm_to_points_print(marginX),mm_to_points_print(marginY));
     double signX = 1;
     double signY = 1;
@@ -286,150 +286,150 @@ void painterPrinter::drawSquaresFromMatrixPrint(QPainter &painter, const QVector
 void painterPrinter::drawFirstPagePE(QPainter &painter)
 {
     painter.fillRect(0, 0, mm_to_points(210), mm_to_points(297), Qt::white); // x, y - координаты верхнего левого угла, width, height - ширина и высота квадрата
-    drawSquaresFromMatrix(painter, ramka_A4_PE, 0, 0);
+    drawSquaresFromMatrix(painter, ramka_A4_PE1, 0, 0);
     painter.translate(mm_to_points(210), mm_to_points(252));
     painter.rotate(-180);
-    drawSquaresFromMatrix(painter, Title_block_List1vp_TextDocuments, 0, 0);
+    drawSquaresFromMatrix(painter, Title_block_List1vp_TextDocuments1, 0, 0);
     painter.translate(mm_to_points(0), mm_to_points(-45));
-    drawSquaresFromMatrix(painter, Title_block_List1_TextDocuments, 0, 0);
+    drawSquaresFromMatrix(painter, Title_block_List1_TextDocuments1, 0, 0);
 
     painter.rotate(180);
     painter.translate(mm_to_points(-210), mm_to_points(0));
-    drawSquaresFromMatrix(painter, Left_block_List1, 0, 1);
+    drawSquaresFromMatrix(painter, Left_block_List11, 0, 1);
     painter.translate(mm_to_points(0), mm_to_points(-297));
-    drawSquaresFromMatrix(painter, Top_block_PE, 0, 0);
+    drawSquaresFromMatrix(painter, Top_block_PE1, 0, 0);
     painter.translate(mm_to_points(0), mm_to_points(297));
-    drawSquaresFromMatrix(painter, Lines_A4_PE_25lines_List1, 0, 1);
+    drawSquaresFromMatrix(painter, Lines_A4_PE_25lines_List11, 0, 1);
     painter.translate(mm_to_points(0), mm_to_points(-297));//Вернулись на первоначальное положение
 
     //начинаем писать текст
-    drawTextFromMatrix(painter, Title_block_List1_TextDocuments_textData_A4_PE, 0, 0, 210, 297);
-    drawTextFromMatrix(painter, Left_block_List1_textElements, 0, 1, 0, 297);
-    drawTextFromMatrix(painter, Top_block_PE_textElements, 0, 0, 1, 0);
+    drawTextFromMatrix(painter, Title_block_List1_TextDocuments1_textData_A41_PE1, 0, 0, 210, 297);
+    drawTextFromMatrix(painter, Left_block_List11_textElements, 0, 1, 0, 297);
+    drawTextFromMatrix(painter, Top_block_PE1_textElements, 0, 0, 1, 0);
 }
 
 void painterPrinter::drawOtherPagePE(QPainter &painter)
 {
     painter.fillRect(0, 0, mm_to_points(210), mm_to_points(297), Qt::white); // x, y - координаты верхнего левого угла, width, height - ширина и высота квадрата
-    drawSquaresFromMatrix(painter, ramka_A4_PE, 0, 0);
+    drawSquaresFromMatrix(painter, ramka_A4_PE1, 0, 0);
     painter.translate(mm_to_points(210), mm_to_points(297));
-    drawSquaresFromMatrix(painter, Title_block_List2, 0, 1);
+    drawSquaresFromMatrix(painter, Title_block_List21, 0, 1);
     painter.translate(mm_to_points(-210), mm_to_points(0));
-    drawSquaresFromMatrix(painter, Left_block_List2, 0, 1);
+    drawSquaresFromMatrix(painter, Left_block_List21, 0, 1);
     painter.translate(mm_to_points(0), mm_to_points(-297));
-    drawSquaresFromMatrix(painter, Top_block_PE, 0, 0);
+    drawSquaresFromMatrix(painter, Top_block_PE1, 0, 0);
     painter.translate(mm_to_points(0), mm_to_points(297));
-    drawSquaresFromMatrix(painter, Lines_A4_PE_List2, 0, 1);
+    drawSquaresFromMatrix(painter, Lines_A4_PE_List21, 0, 1);
     painter.translate(mm_to_points(0), mm_to_points(-297));//Вернулись на первоначальное положение
 
     //начинаем писать текст
-    drawTextFromMatrix(painter, Title_block_List2_textElements_A4, 0, 1, 210, 297);
-    drawTextFromMatrix(painter, Left_block_List2_textElements, 0, 1, 0, 297);
-    drawTextFromMatrix(painter, Top_block_PE_textElements, 0, 0, 0, 0);
+    drawTextFromMatrix(painter, Title_block_List21_textElements_A4, 0, 1, 210, 297);
+    drawTextFromMatrix(painter, Left_block_List21_textElements, 0, 1, 0, 297);
+    drawTextFromMatrix(painter, Top_block_PE1_textElements, 0, 0, 0, 0);
 }
 
 void painterPrinter::drawFirstPageSP(QPainter &painter)
 {
-    painter.fillRect(0, 0, mm_to_points(210), mm_to_points(297), Qt::white); // x, y - координаты верхнего левого угла, width, height - ширина и высота квадрата
-    drawSquaresFromMatrix(painter, ramka_A4_PE, 0, 0);
+    painter.fillRect(0, 0, mm_to_points(210), mm_to_points(297), Qt::white); // x, y - координаты верхнего левого угла, width, height - ширина и высота квадратаdebug\mainwindow.o:C:\LezhnevV\workprjcts\build-VP_merge-Desktop_Qt_5_12_12_MinGW_64_bit-Debug\..\VP_merge\perechenDrwingConstants.h:21: ошибка: multiple definition of `ramka_A4_PE'
+    drawSquaresFromMatrix(painter, ramka_A4_PE1, 0, 0);
     painter.translate(mm_to_points(210), mm_to_points(252));
     painter.rotate(-180);
-    drawSquaresFromMatrix(painter, Title_block_List1vp_TextDocuments, 0, 0);
+    drawSquaresFromMatrix(painter, Title_block_List1vp_TextDocuments1, 0, 0);
     painter.translate(mm_to_points(0), mm_to_points(-45));
-    drawSquaresFromMatrix(painter, Title_block_List1_TextDocuments, 0, 0);
+    drawSquaresFromMatrix(painter, Title_block_List1_TextDocuments1, 0, 0);
     painter.rotate(180);
     painter.translate(mm_to_points(-210), mm_to_points(0));
-    drawSquaresFromMatrix(painter, Left_block_List1, 0, 1);
+    drawSquaresFromMatrix(painter, Left_block_List11, 0, 1);
     painter.translate(mm_to_points(0), mm_to_points(-297));
-    drawSquaresFromMatrix(painter, Top_block_SP, 0, 1);
+    drawSquaresFromMatrix(painter, Top_block_SP1, 0, 1);
     painter.translate(mm_to_points(0), mm_to_points(297));
-    drawSquaresFromMatrix(painter, Lines_A4_SP_25lines_List1, 0, 1);
+    drawSquaresFromMatrix(painter, Lines_A4_SP_25lines_List11, 0, 1);
     painter.translate(mm_to_points(0), mm_to_points(-297));//Вернулись на первоначальное положение
 
     //начинаем писать текст
-    drawTextFromMatrix(painter, Title_block_List1_TextDocuments_textData_A4, 0, 0, 210, 297);
-    drawTextFromMatrix(painter, Left_block_List1_textElements, 0, 1, 0, 297);
-    drawTextFromMatrix(painter, Top_block_SPtextElements, 0, 1, 0, 0);
+    drawTextFromMatrix(painter, Title_block_List1_TextDocuments1_textData_A41, 0, 0, 210, 297);
+    drawTextFromMatrix(painter, Left_block_List11_textElements, 0, 1, 0, 297);
+    drawTextFromMatrix(painter, Top_block_SP1textElements, 0, 1, 0, 0);
 }
 
 void painterPrinter::drawOtherPageSP(QPainter &painter)
 {
     painter.fillRect(0, 0, mm_to_points(210), mm_to_points(297), Qt::white); // x, y - координаты верхнего левого угла, width, height - ширина и высота квадрата
-    drawSquaresFromMatrix(painter, ramka_A4_PE, 0, 0);
+    drawSquaresFromMatrix(painter, ramka_A4_PE1, 0, 0);
     painter.translate(mm_to_points(210), mm_to_points(297));
-    drawSquaresFromMatrix(painter, Title_block_List2, 0, 1);
+    drawSquaresFromMatrix(painter, Title_block_List21, 0, 1);
     painter.translate(mm_to_points(-210), mm_to_points(0));
-    drawSquaresFromMatrix(painter, Left_block_List2, 0, 1);
+    drawSquaresFromMatrix(painter, Left_block_List21, 0, 1);
     painter.translate(mm_to_points(0), mm_to_points(-297));
-    drawSquaresFromMatrix(painter, Top_block_SP, 0, 1);
+    drawSquaresFromMatrix(painter, Top_block_SP1, 0, 1);
     painter.translate(mm_to_points(0), mm_to_points(297));
-    drawSquaresFromMatrix(painter, Lines_A4_SP_25lines_List2, 0, 1);
+    drawSquaresFromMatrix(painter, Lines_A4_SP_25lines_List21, 0, 1);
     painter.translate(mm_to_points(0), mm_to_points(-297));//Вернулись на первоначальное положение
 
     //начинаем писать текст
-    drawTextFromMatrix(painter, Title_block_List2_textElements_A4, 0, 1, 210, 297);
-    drawTextFromMatrix(painter, Left_block_List2_textElements, 0, 1, 0, 297);
-    drawTextFromMatrix(painter, Top_block_SPtextElements, 0, 1, 0, 0);
+    drawTextFromMatrix(painter, Title_block_List21_textElements_A4, 0, 1, 210, 297);
+    drawTextFromMatrix(painter, Left_block_List21_textElements, 0, 1, 0, 297);
+    drawTextFromMatrix(painter, Top_block_SP1textElements, 0, 1, 0, 0);
 }
 
 void painterPrinter::drawFirstPageVP(QPainter &painter)
 {
     painter.fillRect(0, 0, mm_to_points(420), mm_to_points(297), Qt::white); // x, y - координаты верхнего левого угла, width, height - ширина и высота квадрата
-    drawSquaresFromMatrix(painter, ramka_A3_VP, 0, 0);
+    drawSquaresFromMatrix(painter, ramka_A3_VP1, 0, 0);
     painter.translate(mm_to_points(420), mm_to_points(252));
     painter.rotate(-180);
-    drawSquaresFromMatrix(painter, Title_block_List1vp_TextDocuments, 0, 0);
+    drawSquaresFromMatrix(painter, Title_block_List1vp_TextDocuments1, 0, 0);
     painter.translate(mm_to_points(0), mm_to_points(-45));
-    drawSquaresFromMatrix(painter, Title_block_List1_TextDocuments, 0, 0);
+    drawSquaresFromMatrix(painter, Title_block_List1_TextDocuments1, 0, 0);
     painter.rotate(180);
     painter.translate(mm_to_points(-420), mm_to_points(0));
-    drawSquaresFromMatrix(painter, Left_block_List1, 0, 1);
+    drawSquaresFromMatrix(painter, Left_block_List11, 0, 1);
     painter.translate(mm_to_points(0), mm_to_points(-297));
-    drawSquaresFromMatrix(painter, Top_block_VP, 0, 1);
+    drawSquaresFromMatrix(painter, Top_block_VP1, 0, 1);
     painter.translate(mm_to_points(0), mm_to_points(297));
-    drawSquaresFromMatrix(painter, Lines_A3_List1, 0, 1);
+    drawSquaresFromMatrix(painter, Lines_A3_List11, 0, 1);
     painter.translate(mm_to_points(0), mm_to_points(-297));//Вернулись на первоначальное положение
 
     //начинаем писать текст
-    drawTextFromMatrix(painter, Title_block_List1_TextDocuments_textData_A3, 0, 0, 420, 297);
-    drawTextFromMatrix(painter, Left_block_List1_textElements, 0, 1, 0, 297);
-    drawTextFromMatrix(painter, Top_block_VP_textElements, 0, 1, 0, 0);
+    drawTextFromMatrix(painter, Title_block_List1_TextDocuments1_textData_A3, 0, 0, 420, 297);
+    drawTextFromMatrix(painter, Left_block_List11_textElements, 0, 1, 0, 297);
+    drawTextFromMatrix(painter, Top_block_VP1_textElements, 0, 1, 0, 0);
 }
 
 void painterPrinter::drawOtherPageVP(QPainter &painter)
 {
     painter.fillRect(0, 0, mm_to_points(420), mm_to_points(297), Qt::white); // x, y - координаты верхнего левого угла, width, height - ширина и высота квадрата
-    drawSquaresFromMatrix(painter, ramka_A3_VP, 0, 0);
+    drawSquaresFromMatrix(painter, ramka_A3_VP1, 0, 0);
     painter.translate(mm_to_points(420), mm_to_points(297));
-    drawSquaresFromMatrix(painter, Title_block_List2, 0, 1);
+    drawSquaresFromMatrix(painter, Title_block_List21, 0, 1);
     painter.translate(mm_to_points(-420), mm_to_points(0));
-    drawSquaresFromMatrix(painter, Left_block_List2, 0, 1);
+    drawSquaresFromMatrix(painter, Left_block_List21, 0, 1);
     painter.translate(mm_to_points(0), mm_to_points(-297));
-    drawSquaresFromMatrix(painter, Top_block_VP, 0, 1);
+    drawSquaresFromMatrix(painter, Top_block_VP1, 0, 1);
     painter.translate(mm_to_points(0), mm_to_points(297));
-    drawSquaresFromMatrix(painter, Lines_A3_List2, 0, 1);
+    drawSquaresFromMatrix(painter, Lines_A3_List21, 0, 1);
     painter.translate(mm_to_points(0), mm_to_points(-297));//Вернулись на первоначальное положение
 
     //начинаем писать текст
-    drawTextFromMatrix(painter, Title_block_List2_textElements_A3, 0, 1, 420, 297);
-    drawTextFromMatrix(painter, Left_block_List2_textElements, 0, 1, 0, 297);
-    drawTextFromMatrix(painter, Top_block_VP_textElements, 0, 1, 0, 0);
+    drawTextFromMatrix(painter, Title_block_List21_textElements_A3, 0, 1, 420, 297);
+    drawTextFromMatrix(painter, Left_block_List21_textElements, 0, 1, 0, 297);
+    drawTextFromMatrix(painter, Top_block_VP1_textElements, 0, 1, 0, 0);
 }
 
 void painterPrinter::drawLRIPage(QPainter &painter)
 {
     painter.fillRect(0, 0, mm_to_points(210), mm_to_points(297), Qt::white); // x, y - координаты верхнего левого угла, width, height - ширина и высота квадрата
-    drawSquaresFromMatrix(painter, A4_ListRegistration, 0, 0);
+    drawSquaresFromMatrix(painter, A4_ListRegistration1, 0, 0);
     painter.translate(mm_to_points(210), mm_to_points(297));
-    drawSquaresFromMatrix(painter, Title_block_List2, 0, 1);
+    drawSquaresFromMatrix(painter, Title_block_List21, 0, 1);
     painter.translate(mm_to_points(-210), mm_to_points(0));
-    drawSquaresFromMatrix(painter, Left_block_List2, 0, 1);
+    drawSquaresFromMatrix(painter, Left_block_List21, 0, 1);
     painter.translate(mm_to_points(0), mm_to_points(-297));//Вернулись на первоначальное положение
 
     //начинаем писать текст
-    drawTextFromMatrix(painter, Title_block_List2_textElements_A4, 0, 1, 210, 297);
-    drawTextFromMatrix(painter, Left_block_List2_textElements, 0, 1, 0, 297);
-    drawTextFromMatrix(painter, A4_ListRegistration_textElements, 0, 0, 0, 0);
+    drawTextFromMatrix(painter, Title_block_List21_textElements_A4, 0, 1, 210, 297);
+    drawTextFromMatrix(painter, Left_block_List21_textElements, 0, 1, 0, 297);
+    drawTextFromMatrix(painter, A4_ListRegistration1_textElements, 0, 0, 0, 0);
 }
 
 void painterPrinter::drawPage(QPainter &painter, QString docType, int pageNumber)
@@ -466,150 +466,150 @@ void painterPrinter::drawPage(QPainter &painter, QString docType, int pageNumber
 void painterPrinter::drawFirstPagePEPrint(QPainter &painter)
 {
     painter.fillRect(0, 0, mm_to_points_print(210), mm_to_points_print(297), Qt::white); // x, y - координаты верхнего левого угла, width, height - ширина и высота квадрата
-    drawSquaresFromMatrixPrint(painter, ramka_A4_PE, 0, 0);
+    drawSquaresFromMatrixPrint(painter, ramka_A4_PE1, 0, 0);
     painter.translate(mm_to_points_print(210), mm_to_points_print(252));
     painter.rotate(-180);
-    drawSquaresFromMatrixPrint(painter, Title_block_List1vp_TextDocuments, 0, 0);
+    drawSquaresFromMatrixPrint(painter, Title_block_List1vp_TextDocuments1, 0, 0);
     painter.translate(mm_to_points_print(0), mm_to_points_print(-45));
-    drawSquaresFromMatrixPrint(painter, Title_block_List1_TextDocuments, 0, 0);
+    drawSquaresFromMatrixPrint(painter, Title_block_List1_TextDocuments1, 0, 0);
 
     painter.rotate(180);
     painter.translate(mm_to_points_print(-210), mm_to_points_print(0));
-    drawSquaresFromMatrixPrint(painter, Left_block_List1, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Left_block_List11, 0, 1);
     painter.translate(mm_to_points_print(0), mm_to_points_print(-297));
-    drawSquaresFromMatrixPrint(painter, Top_block_PE, 0, 0);
+    drawSquaresFromMatrixPrint(painter, Top_block_PE1, 0, 0);
     painter.translate(mm_to_points_print(0), mm_to_points_print(297));
-    drawSquaresFromMatrixPrint(painter, Lines_A4_PE_25lines_List1, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Lines_A4_PE_25lines_List11, 0, 1);
     painter.translate(mm_to_points_print(0), mm_to_points_print(-297));//Вернулись на первоначальное положение
 
     //начинаем писать текст
-    drawTextFromMatrixPrint(painter, Title_block_List1_TextDocuments_textData_A4_PE, 0, 0, 210, 297);
-    drawTextFromMatrixPrint(painter, Left_block_List1_textElements, 0, 1, 0, 297);
-    drawTextFromMatrixPrint(painter, Top_block_PE_textElements, 0, 0, 1, 0);
+    drawTextFromMatrixPrint(painter, Title_block_List1_TextDocuments1_textData_A41_PE1, 0, 0, 210, 297);
+    drawTextFromMatrixPrint(painter, Left_block_List11_textElements, 0, 1, 0, 297);
+    drawTextFromMatrixPrint(painter, Top_block_PE1_textElements, 0, 0, 1, 0);
 }
 
 void painterPrinter::drawOtherPagePEPrint(QPainter &painter)
 {
     painter.fillRect(0, 0, mm_to_points_print(210), mm_to_points_print(297), Qt::white); // x, y - координаты верхнего левого угла, width, height - ширина и высота квадрата
-    drawSquaresFromMatrixPrint(painter, ramka_A4_PE, 0, 0);
+    drawSquaresFromMatrixPrint(painter, ramka_A4_PE1, 0, 0);
     painter.translate(mm_to_points_print(210), mm_to_points_print(297));
-    drawSquaresFromMatrixPrint(painter, Title_block_List2, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Title_block_List21, 0, 1);
     painter.translate(mm_to_points_print(-210), mm_to_points_print(0));
-    drawSquaresFromMatrixPrint(painter, Left_block_List2, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Left_block_List21, 0, 1);
     painter.translate(mm_to_points_print(0), mm_to_points_print(-297));
-    drawSquaresFromMatrixPrint(painter, Top_block_PE, 0, 0);
+    drawSquaresFromMatrixPrint(painter, Top_block_PE1, 0, 0);
     painter.translate(mm_to_points_print(0), mm_to_points_print(297));
-    drawSquaresFromMatrixPrint(painter, Lines_A4_PE_List2, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Lines_A4_PE_List21, 0, 1);
     painter.translate(mm_to_points_print(0), mm_to_points_print(-297));//Вернулись на первоначальное положение
 
     //начинаем писать текст
-    drawTextFromMatrixPrint(painter, Title_block_List2_textElements_A4, 0, 1, 210, 297);
-    drawTextFromMatrixPrint(painter, Left_block_List2_textElements, 0, 1, 0, 297);
-    drawTextFromMatrixPrint(painter, Top_block_PE_textElements, 0, 0, 0, 0);
+    drawTextFromMatrixPrint(painter, Title_block_List21_textElements_A4, 0, 1, 210, 297);
+    drawTextFromMatrixPrint(painter, Left_block_List21_textElements, 0, 1, 0, 297);
+    drawTextFromMatrixPrint(painter, Top_block_PE1_textElements, 0, 0, 0, 0);
 }
 
 void painterPrinter::drawFirstPageSPPrint(QPainter &painter)
 {
     painter.fillRect(0, 0, mm_to_points_print(210), mm_to_points_print(297), Qt::white); // x, y - координаты верхнего левого угла, width, height - ширина и высота квадрата
-    drawSquaresFromMatrixPrint(painter, ramka_A4_PE, 0, 0);
+    drawSquaresFromMatrixPrint(painter, ramka_A4_PE1, 0, 0);
     painter.translate(mm_to_points_print(210), mm_to_points_print(252));
     painter.rotate(-180);
-    drawSquaresFromMatrixPrint(painter, Title_block_List1vp_TextDocuments, 0, 0);
+    drawSquaresFromMatrixPrint(painter, Title_block_List1vp_TextDocuments1, 0, 0);
     painter.translate(mm_to_points_print(0), mm_to_points_print(-45));
-    drawSquaresFromMatrixPrint(painter, Title_block_List1_TextDocuments, 0, 0);
+    drawSquaresFromMatrixPrint(painter, Title_block_List1_TextDocuments1, 0, 0);
     painter.rotate(180);
     painter.translate(mm_to_points_print(-210), mm_to_points_print(0));
-    drawSquaresFromMatrixPrint(painter, Left_block_List1, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Left_block_List11, 0, 1);
     painter.translate(mm_to_points_print(0), mm_to_points_print(-297));
-    drawSquaresFromMatrixPrint(painter, Top_block_SP, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Top_block_SP1, 0, 1);
     painter.translate(mm_to_points_print(0), mm_to_points_print(297));
-    drawSquaresFromMatrixPrint(painter, Lines_A4_SP_25lines_List1, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Lines_A4_SP_25lines_List11, 0, 1);
     painter.translate(mm_to_points_print(0), mm_to_points_print(-297));//Вернулись на первоначальное положение
 
     //начинаем писать текст
-    drawTextFromMatrixPrint(painter, Title_block_List1_TextDocuments_textData_A4, 0, 0, 210, 297);
-    drawTextFromMatrixPrint(painter, Left_block_List1_textElements, 0, 1, 0, 297);
-    drawTextFromMatrixPrint(painter, Top_block_SPtextElements, 0, 1, 0, 0);
+    drawTextFromMatrixPrint(painter, Title_block_List1_TextDocuments1_textData_A41, 0, 0, 210, 297);
+    drawTextFromMatrixPrint(painter, Left_block_List11_textElements, 0, 1, 0, 297);
+    drawTextFromMatrixPrint(painter, Top_block_SP1textElements, 0, 1, 0, 0);
 }
 
 void painterPrinter::drawOtherPageSPPrint(QPainter &painter)
 {
     painter.fillRect(0, 0, mm_to_points_print(210), mm_to_points_print(297), Qt::white); // x, y - координаты верхнего левого угла, width, height - ширина и высота квадрата
-    drawSquaresFromMatrixPrint(painter, ramka_A4_PE, 0, 0);
+    drawSquaresFromMatrixPrint(painter, ramka_A4_PE1, 0, 0);
     painter.translate(mm_to_points_print(210), mm_to_points_print(297));
-    drawSquaresFromMatrixPrint(painter, Title_block_List2, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Title_block_List21, 0, 1);
     painter.translate(mm_to_points_print(-210), mm_to_points_print(0));
-    drawSquaresFromMatrixPrint(painter, Left_block_List2, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Left_block_List21, 0, 1);
     painter.translate(mm_to_points_print(0), mm_to_points_print(-297));
-    drawSquaresFromMatrixPrint(painter, Top_block_SP, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Top_block_SP1, 0, 1);
     painter.translate(mm_to_points_print(0), mm_to_points_print(297));
-    drawSquaresFromMatrixPrint(painter, Lines_A4_SP_25lines_List2, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Lines_A4_SP_25lines_List21, 0, 1);
     painter.translate(mm_to_points_print(0), mm_to_points_print(-297));//Вернулись на первоначальное положение
 
     //начинаем писать текст
-    drawTextFromMatrixPrint(painter, Title_block_List2_textElements_A4, 0, 1, 210, 297);
-    drawTextFromMatrixPrint(painter, Left_block_List2_textElements, 0, 1, 0, 297);
-    drawTextFromMatrixPrint(painter, Top_block_SPtextElements, 0, 1, 0, 0);
+    drawTextFromMatrixPrint(painter, Title_block_List21_textElements_A4, 0, 1, 210, 297);
+    drawTextFromMatrixPrint(painter, Left_block_List21_textElements, 0, 1, 0, 297);
+    drawTextFromMatrixPrint(painter, Top_block_SP1textElements, 0, 1, 0, 0);
 }
 
 void painterPrinter::drawFirstPageVPPrint(QPainter &painter)
 {
     painter.fillRect(0, 0, mm_to_points_print(420), mm_to_points_print(297), Qt::white); // x, y - координаты верхнего левого угла, width, height - ширина и высота квадрата
-    drawSquaresFromMatrixPrint(painter, ramka_A3_VP, 0, 0);
+    drawSquaresFromMatrixPrint(painter, ramka_A3_VP1, 0, 0);
     painter.translate(mm_to_points_print(420), mm_to_points_print(252));
     painter.rotate(-180);
-    drawSquaresFromMatrixPrint(painter, Title_block_List1vp_TextDocuments, 0, 0);
+    drawSquaresFromMatrixPrint(painter, Title_block_List1vp_TextDocuments1, 0, 0);
     painter.translate(mm_to_points_print(0), mm_to_points_print(-45));
-    drawSquaresFromMatrixPrint(painter, Title_block_List1_TextDocuments, 0, 0);
+    drawSquaresFromMatrixPrint(painter, Title_block_List1_TextDocuments1, 0, 0);
     painter.rotate(180);
     painter.translate(mm_to_points_print(-420), mm_to_points_print(0));
-    drawSquaresFromMatrixPrint(painter, Left_block_List1, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Left_block_List11, 0, 1);
     painter.translate(mm_to_points_print(0), mm_to_points_print(-297));
-    drawSquaresFromMatrixPrint(painter, Top_block_VP, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Top_block_VP1, 0, 1);
     painter.translate(mm_to_points_print(0), mm_to_points_print(297));
-    drawSquaresFromMatrixPrint(painter, Lines_A3_List1, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Lines_A3_List11, 0, 1);
     painter.translate(mm_to_points_print(0), mm_to_points_print(-297));//Вернулись на первоначальное положение
 
     //начинаем писать текст
-    drawTextFromMatrixPrint(painter, Title_block_List1_TextDocuments_textData_A3, 0, 0, 420, 297);
-    drawTextFromMatrixPrint(painter, Left_block_List1_textElements, 0, 1, 0, 297);
-    drawTextFromMatrixPrint(painter, Top_block_VP_textElements, 0, 1, 0, 0);
+    drawTextFromMatrixPrint(painter, Title_block_List1_TextDocuments1_textData_A3, 0, 0, 420, 297);
+    drawTextFromMatrixPrint(painter, Left_block_List11_textElements, 0, 1, 0, 297);
+    drawTextFromMatrixPrint(painter, Top_block_VP1_textElements, 0, 1, 0, 0);
 }
 
 void painterPrinter::drawOtherPageVPPrint(QPainter &painter)
 {
     painter.fillRect(0, 0, mm_to_points_print(420), mm_to_points_print(297), Qt::white); // x, y - координаты верхнего левого угла, width, height - ширина и высота квадрата
-    drawSquaresFromMatrixPrint(painter, ramka_A3_VP, 0, 0);
+    drawSquaresFromMatrixPrint(painter, ramka_A3_VP1, 0, 0);
     painter.translate(mm_to_points_print(420), mm_to_points_print(297));
-    drawSquaresFromMatrixPrint(painter, Title_block_List2, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Title_block_List21, 0, 1);
     painter.translate(mm_to_points_print(-420), mm_to_points_print(0));
-    drawSquaresFromMatrixPrint(painter, Left_block_List2, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Left_block_List21, 0, 1);
     painter.translate(mm_to_points_print(0), mm_to_points_print(-297));
-    drawSquaresFromMatrixPrint(painter, Top_block_VP, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Top_block_VP1, 0, 1);
     painter.translate(mm_to_points_print(0), mm_to_points_print(297));
-    drawSquaresFromMatrixPrint(painter, Lines_A3_List2, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Lines_A3_List21, 0, 1);
     painter.translate(mm_to_points_print(0), mm_to_points_print(-297));//Вернулись на первоначальное положение
 
     //начинаем писать текст
-    drawTextFromMatrixPrint(painter, Title_block_List2_textElements_A3, 0, 1, 420, 297);
-    drawTextFromMatrixPrint(painter, Left_block_List2_textElements, 0, 1, 0, 297);
-    drawTextFromMatrixPrint(painter, Top_block_VP_textElements, 0, 1, 0, 0);
+    drawTextFromMatrixPrint(painter, Title_block_List21_textElements_A3, 0, 1, 420, 297);
+    drawTextFromMatrixPrint(painter, Left_block_List21_textElements, 0, 1, 0, 297);
+    drawTextFromMatrixPrint(painter, Top_block_VP1_textElements, 0, 1, 0, 0);
 }
 
 void painterPrinter::drawLRIPagePrint(QPainter &painter)
 {
     painter.fillRect(0, 0, mm_to_points_print(210), mm_to_points_print(297), Qt::white); // x, y - координаты верхнего левого угла, width, height - ширина и высота квадрата
-    drawSquaresFromMatrixPrint(painter, A4_ListRegistration, 0, 0);
+    drawSquaresFromMatrixPrint(painter, A4_ListRegistration1, 0, 0);
     painter.translate(mm_to_points_print(210), mm_to_points_print(297));
-    drawSquaresFromMatrixPrint(painter, Title_block_List2, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Title_block_List21, 0, 1);
     painter.translate(mm_to_points_print(-210), mm_to_points_print(0));
-    drawSquaresFromMatrixPrint(painter, Left_block_List2, 0, 1);
+    drawSquaresFromMatrixPrint(painter, Left_block_List21, 0, 1);
     painter.translate(mm_to_points_print(0), mm_to_points_print(-297));//Вернулись на первоначальное положение
 
     //начинаем писать текст
-    drawTextFromMatrixPrint(painter, Title_block_List2_textElements_A4, 0, 1, 210, 297);
-    drawTextFromMatrixPrint(painter, Left_block_List2_textElements, 0, 1, 0, 297);
-    drawTextFromMatrixPrint(painter, A4_ListRegistration_textElements, 0, 0, 0, 0);
+    drawTextFromMatrixPrint(painter, Title_block_List21_textElements_A4, 0, 1, 210, 297);
+    drawTextFromMatrixPrint(painter, Left_block_List21_textElements, 0, 1, 0, 297);
+    drawTextFromMatrixPrint(painter, A4_ListRegistration1_textElements, 0, 0, 0, 0);
 }
 
 void painterPrinter::drawContentPE(QPainter &painter, PageContainer pageContainer, int pageNumber)
@@ -617,13 +617,13 @@ void painterPrinter::drawContentPE(QPainter &painter, PageContainer pageContaine
     //
 }
 
-void painterPrinter::drawTextFromMatrix(QPainter &painter, const QVector<TextElement> &textMatrix, bool xMirror, bool yMirror, double marginX, double marginY){
+void painterPrinter::drawTextFromMatrix(QPainter &painter, const QVector<TextElement1> &textMatrix, bool xMirror, bool yMirror, double marginX, double marginY){
     for (const auto &textData : textMatrix){
         drawText(painter, textData, xMirror, yMirror, marginX, marginY);
     }
 }
 
-void painterPrinter::drawTextFromMatrixPrint(QPainter &painter, const QVector<TextElement> &textMatrix, bool xMirror, bool yMirror, double marginX, double marginY){
+void painterPrinter::drawTextFromMatrixPrint(QPainter &painter, const QVector<TextElement1> &textMatrix, bool xMirror, bool yMirror, double marginX, double marginY){
     for (const auto &textData : textMatrix){
         drawTextPrint(painter, textData, xMirror, yMirror, marginX, marginY);
     }

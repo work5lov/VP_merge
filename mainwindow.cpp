@@ -3,6 +3,11 @@
 #include <Windows.h>
 #include "painterprinter.h"
 
+//#include "perechenDrwingConstants.h"
+//#include "specificationDrwingContants.h"
+//#include "lriDrwingConstants.h"
+//#include "vedomostDrwingConstants.h"
+
 using namespace QXlsx;
 QMap <int,double> columnWidth, rowHeight, columnWidthPE, rowHeightPE, columnWidthSP, rowHeightSP;
 QMap<QString,QString> razrabs, checks, utvs, norms, nachalnicks, nachalnickAlts;
@@ -39,47 +44,9 @@ int columsSP[2][6] = {
     {4, 7, 9, 14, 20, 21}
 };
 
-//struct peline {
-//    QString num;
-//    QString oboz;
-//    QString name;
-//    QString comment;
-//    bool underline;
-//    QString type;
-//}
-
 peline pipeline;
 
-//struct vpline {
-//    QString num;
-//    QString oboz;
-//    QString kod;
-//    QString name;
-//    QString comment;
-//    bool underline;
-//    QString type;
-//    bool merge;
-//    QString vhodit;
-//    QString post;
-//}pivpline;
-
 vpline pivpline;
-
-//struct specline {
-//    QString num;
-//    QString oboz;
-//    QString name;
-//    QString comment;
-//    bool underline;
-//    QString type;
-//    bool merge;
-//    bool needtu;
-//    QString GroupLine1;
-//    QString GroupLine2;
-//    QString format;
-//    QString pos;
-//    QString posinelement;
-//}
 
 specline pispecline;
 
@@ -216,7 +183,7 @@ MainWindow::MainWindow(QWidget *parent)
     _xOffsetVP = 0;
     _yOffsetVP = 0;
 
-//    pp = new painterPrinter();
+    pp = new painterPrinter();
 
     connect(ui->perechenHbar, &QSlider::valueChanged, this, &MainWindow::updateCanvasPE);
     connect(ui->perechenVbar, &QSlider::valueChanged, this, &MainWindow::updateCanvasPE);
@@ -262,7 +229,7 @@ MainWindow::~MainWindow()
 void MainWindow::updateCanvasPE()
 {
     _xOffsetPE = 10*ui->perechenHbar->value();
-    _yOffsetPE = 10*ui->perechenHbar->value();
+    _yOffsetPE = 50*ui->perechenVbar->value();
 
     update();
     repaint();
@@ -3724,7 +3691,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
     // Применяем текущее смещение
     painterPE.translate(-_xOffsetPE, -_yOffsetPE);
 
-//    pp->drawOtherPagePE(painterPE);
+    pp->drawOtherPagePE(painterPE);
 
 //    for(int i = 0; i < 24; ++i){
 
@@ -3804,7 +3771,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
 
 //    painter.translate(mm_to_points_print(-161), mm_to_points_print(5));
     //перемещаемся к началу координат следующего листа
-//    pp->drawOtherPageVP(painterPE);
+    pp->drawOtherPageVP(painterPE);
     for(int i = 0; i < 29; ++i){
         painterPE.setBrush(Qt::white); // Белый цвет для заполнения
         painterPE.setPen(Qt::NoPen); // Нет контура

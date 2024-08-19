@@ -1,4 +1,4 @@
-QT       += core gui widgets printsupport
+QT       += core gui printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -18,16 +18,12 @@ include(./QXlsx.pri)
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-#    painterprinter.cpp
+    painterprinter.cpp
 
 HEADERS += \
     Structures.h \
-#    lriDrwingConstants.h \
     mainwindow.h \
-#    painterprinter.h \
-#    perechenDrwingConstants.h \
-#    specificationDrwingContants.h \
-#    vedomostDrwingConstants.h
+    painterprinter.h \
 
 FORMS += \
     mainwindow.ui
@@ -37,5 +33,4 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-RESOURCES += \
-    resources.qrc
+RESOURCES +=
