@@ -24,6 +24,7 @@
 #include <QPageSize>
 
 #include "painterprinter.h"
+#include "docpainter.h"
 
 //for tables
 #include "xlsxdocument.h"
@@ -67,7 +68,7 @@ signals:
     void sendOffsetY(qreal y);
 
 protected:
-    void paintEvent(QPaintEvent *event);
+//    void paintEvent(QPaintEvent *event);
 
 private slots:
 

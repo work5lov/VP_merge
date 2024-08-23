@@ -16,12 +16,14 @@ include(./QXlsx.pri)
 #LIBS += -lOpenGL32
 
 SOURCES += \
+    docpainter.cpp \
     main.cpp \
     mainwindow.cpp \
     painterprinter.cpp
 
 HEADERS += \
     Structures.h \
+    docpainter.h \
     mainwindow.h \
     painterprinter.h \
 

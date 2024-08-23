@@ -54,16 +54,6 @@ QList<peline> pipelines;
 QList<vpline> pivplines, pivplinesFin;
 QList<specline> pispeclines;
 
-//struct Page {
-//    QList<peline> pipelines;
-//    QList<vpline> pivplines;
-//    QList<specline> pispeclines;
-//};
-
-//struct PageContainer {
-//    QList<Page> pages;
-//}
-
 PageContainer containerPE, containerVP, containerSP, containerVPs;
 
 //functions
@@ -185,8 +175,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     pp = new painterPrinter();
 
-    connect(ui->perechenHbar, &QSlider::valueChanged, this, &MainWindow::updateCanvasPE);
-    connect(ui->perechenVbar, &QSlider::valueChanged, this, &MainWindow::updateCanvasPE);
+    connect(ui->perechenHbar, &QSlider::valueChanged, ui->canvasPE, &DocPainter::updateX);
+    connect(ui->perechenVbar, &QSlider::valueChanged, ui->canvasPE, &DocPainter::updateY);
 
     connect(ui->specificationHbar, &QSlider::valueChanged, this, &MainWindow::updateCanvasSP);
     connect(ui->specificationVbar, &QSlider::valueChanged, this, &MainWindow::updateCanvasSP);
@@ -3670,28 +3660,28 @@ void MainWindow::on_choseGroupDir_clicked()
     ui->lineEdit->setText(outDir);
 }
 
-void MainWindow::paintEvent(QPaintEvent *event)
-{
+//void MainWindow::paintEvent(QPaintEvent *event)
+//{
     // Создаем изображение с размерами виджета canvas
-    QImage imagePE(ui->canvasPE->size(), QImage::Format_ARGB32);
+//    QImage imagePE(ui->canvasPE->size(), QImage::Format_ARGB32);
     // Создаем объект QPainter для рисования на изображении
-    QPainter painterPE(&imagePE);
+//    QPainter painterPE(&imagePE);
 
     // Очищаем изображение, чтобы фон был прозрачным
-    imagePE.fill(Qt::transparent);
+//    imagePE.fill(Qt::transparent);
 
     // Сохраняем текущее состояние системы координат
-    painterPE.save();
+//    painterPE.save();
 
     // Находим центр полотна
-    QPointF center(width() / 2.0, height() / 2.0);
+//    QPointF center(width() / 2.0, height() / 2.0);
 
     // Смещаем начало координат к центру полотна
 //        painter.translate(center);
     // Применяем текущее смещение
-    painterPE.translate(-_xOffsetPE, -_yOffsetPE);
+//    painterPE.translate(-_xOffsetPE, -_yOffsetPE);
 
-    pp->drawOtherPagePE(painterPE);
+//    pp->drawOtherPagePE(painterPE);
 
 //    for(int i = 0; i < 24; ++i){
 
@@ -3726,10 +3716,12 @@ void MainWindow::paintEvent(QPaintEvent *event)
 //        drawTextInCenter(painter, squre, text);
 //    }
 
-//    painterPE.translate(mm_to_points_print(161), mm_to_points_print(227.5));
+//    painterPE.translate(mm_to_points_print(161), mm_to_points_print(227.5)); // Для А4 листа
+//    painter.translate(mm_to_points_print(322), mm_to_points_print(227.5)); // Для А3 листа
 
-    painterPE.setBrush(Qt::white); // Белый цвет для заполнения
-    painterPE.setPen(Qt::NoPen); // Нет контура
+
+//    painterPE.setBrush(Qt::white); // Белый цвет для заполнения
+//    painterPE.setPen(Qt::NoPen); // Нет контура
 
     //  Координаты текста штампа
 //    painter.translate(mm_to_points_print(161), mm_to_points_print(227.5)); для А4
@@ -3762,53 +3754,53 @@ void MainWindow::paintEvent(QPaintEvent *event)
 
 //    // Рисование квадрата
 //    painter.drawRect(squre);
-    QString text = "2";
-////    qDebug() << mm_to_points(21);
+//    QString text = "2";
+//////    qDebug() << mm_to_points(21);
+////    // Рисование текста по центру квадрата
+////    drawTextInCenter(painter, squre, text, 3.5);
+
+////    painter.rotate(90);
+
+////    painter.translate(mm_to_points_print(-161), mm_to_points_print(5));
+//    //перемещаемся к началу координат следующего листа
+//    pp->drawOtherPageVP(painterPE);
+//    for(int i = 0; i < 29; ++i){
+//        painterPE.setBrush(Qt::white); // Белый цвет для заполнения
+//        painterPE.setPen(Qt::NoPen); // Нет контура
+//    //    QRect squareRect(40, 85, 150, 93); // Примерные координаты и размеры квадрата
+////        QRect squre(mm_to_points(41),mm_to_points(34+i*8), mm_to_points(109), mm_to_points(4));// Разраб.
+
+
+//        // Рисование квадрата
+////        painterPE.drawRect(squre);
+//        QString text = "Конденсатор";
+//        // Рисование текста по центру квадрата
+////        pp->drawTextInCenter(painterPE, squre, text);
+//    }
+//    // Установка цвета квадрата и его размеров
+//    painterPE.setBrush(Qt::white); // Белый цвет для заполнения
+//    painterPE.setPen(Qt::NoPen); // Нет контура
+////    QRect squareRect(40, 85, 150, 93); // Примерные координаты и размеры квадрата
+////    QRect squre(mm_to_points(41),mm_to_points(30), mm_to_points(109), mm_to_points(4));
+
+//    // Рисование квадрата
+////    painter.drawRect(squre);
+////    QString text = "Конденсатор";
 //    // Рисование текста по центру квадрата
-//    drawTextInCenter(painter, squre, text, 3.5);
+////    drawTextInCenter(painter, squre, text);
+//    // Восстанавливаем предыдущее состояние системы координат
+//    painterPE.restore();
+////    painter.end();
+//    update();
 
-//    painter.rotate(90);
+//    // Создаем объект QPainter для рисования на виджете
+//    QPainter widgetPainter(this);
 
-//    painter.translate(mm_to_points_print(-161), mm_to_points_print(5));
-    //перемещаемся к началу координат следующего листа
-    pp->drawOtherPageVP(painterPE);
-    for(int i = 0; i < 29; ++i){
-        painterPE.setBrush(Qt::white); // Белый цвет для заполнения
-        painterPE.setPen(Qt::NoPen); // Нет контура
-    //    QRect squareRect(40, 85, 150, 93); // Примерные координаты и размеры квадрата
-//        QRect squre(mm_to_points(41),mm_to_points(34+i*8), mm_to_points(109), mm_to_points(4));// Разраб.
+//    // Устанавливаем виджет canvas в качестве маски для QPainter
+//    widgetPainter.setClipRect(ui->canvasPE->geometry());
 
-
-        // Рисование квадрата
-//        painterPE.drawRect(squre);
-        QString text = "Конденсатор";
-        // Рисование текста по центру квадрата
-//        pp->drawTextInCenter(painterPE, squre, text);
-    }
-    // Установка цвета квадрата и его размеров
-    painterPE.setBrush(Qt::white); // Белый цвет для заполнения
-    painterPE.setPen(Qt::NoPen); // Нет контура
-//    QRect squareRect(40, 85, 150, 93); // Примерные координаты и размеры квадрата
-//    QRect squre(mm_to_points(41),mm_to_points(30), mm_to_points(109), mm_to_points(4));
-
-    // Рисование квадрата
-//    painter.drawRect(squre);
-//    QString text = "Конденсатор";
-    // Рисование текста по центру квадрата
-//    drawTextInCenter(painter, squre, text);
-    // Восстанавливаем предыдущее состояние системы координат
-    painterPE.restore();
-//    painter.end();
-    update();
-
-    // Создаем объект QPainter для рисования на виджете
-    QPainter widgetPainter(this);
-
-    // Устанавливаем виджет canvas в качестве маски для QPainter
-    widgetPainter.setClipRect(ui->canvasPE->geometry());
-
-    // Рисуем изображение на виджете с помощью QPainter
-    widgetPainter.drawImage(ui->canvasPE->geometry(), imagePE);
+//    // Рисуем изображение на виджете с помощью QPainter
+//    widgetPainter.drawImage(ui->canvasPE->geometry(), imagePE);
 //        repaint();
-}
+//}
 

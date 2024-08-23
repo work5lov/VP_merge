@@ -39,7 +39,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="options">
        <attribute name="title">
@@ -392,7 +392,7 @@ p, li { white-space: pre-wrap; }
              </widget>
             </item>
             <item row="0" column="0">
-             <widget class="QWidget" name="canvasPE" native="true">
+             <widget class="DocPainter" name="canvasPE" native="true">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -501,6 +501,14 @@ p, li { white-space: pre-wrap; }
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DocPainter</class>
+   <extends>QWidget</extends>
+   <header>docpainter.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
