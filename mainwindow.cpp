@@ -745,7 +745,7 @@ void MainWindow::createPE(QString filemane, QString distPath)
                     cols[i] = columsPE[rowIndex][i];
                 }
                 forCopy.write(34, 18, pageCount + 1);
-                forCopy.write(33, 10, projectName);
+                forCopy.write(33, 10, projectName);// Имя проекта
                 forCopy.write(1, 3, filemane);//перв применяемость
                 forCopy.write(33, 6, stampPE.value("Разработал"));//Разработал
                 forCopy.write(34, 6, stampPE.value("Проверил"));//Разработал
@@ -3461,9 +3461,30 @@ void MainWindow::on_choseXml_clicked()
 
     parseXML(inDirXml);
     setupStampData();
+    stampPE.insert("Децимальный номер", projectOboz);
 //    createPE(projectOboz);
 //    createSP(projectOboz);
 //    createVP(projectOboz);
+
+    QString projectName;
+    QLineEdit *lineEdit = findChild<QLineEdit*>(projectOboz);
+
+    // Проверить, был ли найден QLineEdit
+    if (lineEdit) {
+        // QLineEdit был найден, можно использовать его
+        projectName = lineEdit->text();
+        qDebug() << "Текст из QLineEdit: " << projectName;
+    } else {
+        // QLineEdit с указанным именем не был найден
+        qDebug() << "QLineEdit с именем 'имя_объекта' не найден.";
+    }
+
+    stampPE.insert("Наименование проекта", projectName);
+
+    ui->canvasPE->setDocType("PE");
+    ui->canvasPE->setStamp(stampPE);
+    ui->canvasPE->setData(containerPE);
+
     qDebug() << projectOboz;
     containersClear();
 }

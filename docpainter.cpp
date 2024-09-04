@@ -11,6 +11,11 @@ void DocPainter::setData(PageContainer pages)
     _dataPagesContainer = pages;
 }
 
+void DocPainter::setStamp(QMap<QString, QString> stamp)
+{
+    _stamp = stamp;
+}
+
 void DocPainter::updateX(int x)
 {
     _xOffset = 10*x;
@@ -52,18 +57,20 @@ void DocPainter::paintEvent(QPaintEvent *event)
 //        qDebug() << width << height;
         //отправить сигнал для блокирования scroll bar'ов
 
-        painter.setBrush(Qt::white); // Белый цвет для заполнения
-        painter.setPen(Qt::NoPen); // Нет контура
+//        painter.setBrush(Qt::white); // Белый цвет для заполнения
+//        painter.setPen(Qt::NoPen); // Нет контура
 
-        QRect squre(center.x()-50,center.y(), 100, 10);// Координаты и размеры квадрата 10 столбец ВП
+//        QRect squre(center.x()-50,center.y(), 100, 10);// Координаты и размеры квадрата 10 столбец ВП
 
-        painter.fillRect(0, 0, (width), (height), Qt::white); // x, y - координаты верхнего левого угла, width, height - ширина и высота квадрата
-        painter.drawRect(squre);
-        QString text = "Данных для отрисовки нет!";
-        drawTextInCenter(painter, squre, text, 5);
+//        painter.fillRect(0, 0, (width), (height), Qt::white); // x, y - координаты верхнего левого угла, width, height - ширина и высота квадрата
+//        painter.drawRect(squre);
+//        QString text = "Данных для отрисовки нет!";
+//        drawTextInCenter(painter, squre, text, 5);
     }
     else{
-        //
+//        painter.setBrush(Qt::white); // Белый цвет для заполнения
+//        painter.setPen(Qt::NoPen); // Нет контура
+        drawDocument(painter, _dataPagesContainer);
     }
 
     update();
@@ -454,6 +461,8 @@ void DocPainter::drawLRIPage(QPainter &painter)
 void DocPainter::drawDocument(QPainter &painter, PageContainer pages)
 {
     int pageCount = pages.pages.size();
+    painter.setBrush(Qt::white); // Белый цвет для заполнения
+    painter.setPen(Qt::NoPen); // Нет контура
     int currentPage = 0; // Номер текущей страницы
     if(_docType == "PE"){
         foreach (const Page& page, pages.pages){
@@ -465,21 +474,21 @@ void DocPainter::drawDocument(QPainter &painter, PageContainer pages)
                 drawOtherPagePE(painter);
 
                 // Заполняем строки
-                foreach (const peline& pipeline, page.pipelines){
-                    QRect oboz(mm_to_points(26),mm_to_points(22+row*8), mm_to_points(9), mm_to_points(4));// Координаты и размеры квадрата 1 столбец ПЭ
-                    QRect name(mm_to_points(41),mm_to_points(22+row*8), mm_to_points(109), mm_to_points(4));// Координаты и размеры квадрата 2 столбец ПЭ
-                    QRect num(mm_to_points(150.5),mm_to_points(22+row*8), mm_to_points(9), mm_to_points(4));// Координаты и размеры квадрата 3 столбец ПЭ
-                    QRect comment(mm_to_points(179),mm_to_points(22+row*8), mm_to_points(9), mm_to_points(4));// Координаты и размеры квадрата 4 столбец ПЭ
+                foreach (const peline& pipeline, page.pipelines){                    
+                    QRect oboz(mm_to_points(26),mm_to_points(6+row*8), mm_to_points(9), mm_to_points(4));// Координаты и размеры квадрата 1 столбец ПЭ
+                    QRect name(mm_to_points(41),mm_to_points(6+row*8), mm_to_points(109), mm_to_points(4));// Координаты и размеры квадрата 2 столбец ПЭ
+                    QRect num(mm_to_points(150.5),mm_to_points(6+row*8), mm_to_points(9), mm_to_points(4));// Координаты и размеры квадрата 3 столбец ПЭ
+                    QRect comment(mm_to_points(179),mm_to_points(6+row*8), mm_to_points(9), mm_to_points(4));// Координаты и размеры квадрата 4 столбец ПЭ
                     // Рисование квадрата
-                    painter.drawRect(oboz);
-                    painter.drawRect(name);
-                    painter.drawRect(num);
-                    painter.drawRect(comment);
+//                    painter.drawRect(oboz);
+//                    painter.drawRect(name);
+//                    painter.drawRect(num);
+//                    painter.drawRect(comment);
                     // Рисование текста по центру квадрата
-                    drawTextInCenter(painter, oboz, pipeline.oboz);
-                    drawTextInCenter(painter, name, pipeline.name);
-                    drawTextInCenter(painter, num, pipeline.num);
-                    drawTextInCenter(painter, comment, pipeline.comment);
+                    drawTextInCenter(painter, oboz, pipeline.oboz, 3.5);
+                    drawTextInCenter(painter, name, pipeline.name, 3.5);
+                    drawTextInCenter(painter, num, pipeline.num, 3.5);
+                    drawTextInCenter(painter, comment, pipeline.comment, 3.5);
                     ++row;
                 }
 
@@ -497,11 +506,10 @@ void DocPainter::drawDocument(QPainter &painter, PageContainer pages)
                 QRect rsal(mm_to_points(-124),mm_to_points(-19), mm_to_points(105), mm_to_points(12));// RSAL
                 QRect pageNumper(mm_to_points(-13.5),mm_to_points(-11), mm_to_points(7), mm_to_points(4));// Лист
                 // Рисование квадрата
-                painter.drawRect(rsal);
-                painter.drawRect(pageNumper);
+//                painter.drawRect(rsal);
+//                painter.drawRect(pageNumper);
                 // Рисование текста по центру квадрата
-                QString rsAL = QString::fromStdString(std::string("RSAL XXXXXX.XXX") + "ПЭ3");
-                drawTextInCenter(painter, rsal, rsAL);
+                drawTextInCenter(painter, rsal, _stamp.value("Децимальный номер") + "ПЭ3");
                 drawTextInCenter(painter, pageNumper, QString::number(currentPage));
 
                 //  Смещаемся для отрисовки следующего листа
@@ -514,20 +522,20 @@ void DocPainter::drawDocument(QPainter &painter, PageContainer pages)
 
                 // Заполняем строки
                 foreach (const peline& pipeline, page.pipelines){
-                    QRect oboz(mm_to_points(26),mm_to_points(22+row*8), mm_to_points(9), mm_to_points(4));// Координаты и размеры квадрата 1 столбец ПЭ
-                    QRect name(mm_to_points(41),mm_to_points(22+row*8), mm_to_points(109), mm_to_points(4));// Координаты и размеры квадрата 2 столбец ПЭ
-                    QRect num(mm_to_points(150.5),mm_to_points(22+row*8), mm_to_points(9), mm_to_points(4));// Координаты и размеры квадрата 3 столбец ПЭ
-                    QRect comment(mm_to_points(179),mm_to_points(22+row*8), mm_to_points(9), mm_to_points(4));// Координаты и размеры квадрата 4 столбец ПЭ
+                    QRect oboz(mm_to_points(26),mm_to_points(6+row*8), mm_to_points(9), mm_to_points(4));// Координаты и размеры квадрата 1 столбец ПЭ
+                    QRect name(mm_to_points(41),mm_to_points(6+row*8), mm_to_points(109), mm_to_points(4));// Координаты и размеры квадрата 2 столбец ПЭ
+                    QRect num(mm_to_points(150.5),mm_to_points(6+row*8), mm_to_points(9), mm_to_points(4));// Координаты и размеры квадрата 3 столбец ПЭ
+                    QRect comment(mm_to_points(179),mm_to_points(6+row*8), mm_to_points(9), mm_to_points(4));// Координаты и размеры квадрата 4 столбец ПЭ
                     // Рисование квадрата
-                    painter.drawRect(oboz);
-                    painter.drawRect(name);
-                    painter.drawRect(num);
-                    painter.drawRect(comment);
+//                    painter.drawRect(oboz);
+//                    painter.drawRect(name);
+//                    painter.drawRect(num);
+//                    painter.drawRect(comment);
                     // Рисование текста по центру квадрата
-                    drawTextInCenter(painter, oboz, pipeline.oboz);
-                    drawTextInCenter(painter, name, pipeline.name);
-                    drawTextInCenter(painter, num, pipeline.num);
-                    drawTextInCenter(painter, comment, pipeline.comment);
+                    drawTextInCenter(painter, oboz, pipeline.oboz, 3.5);
+                    drawTextInCenter(painter, name, pipeline.name, 3.5);
+                    drawTextInCenter(painter, num, pipeline.num, 3.5);
+                    drawTextInCenter(painter, comment, pipeline.comment, 3.5);
                     ++row;
                 }
 
@@ -535,8 +543,8 @@ void DocPainter::drawDocument(QPainter &painter, PageContainer pages)
 
                 painter.rotate(-90);
                 QRect perv(mm_to_points(-64),mm_to_points(14.5), mm_to_points(58), mm_to_points(4));// Перв. применен.
-                painter.drawRect(perv);
-                drawTextInCenter(painter, perv, "RSAL XXXXXX.XXX", 3.5);
+//                painter.drawRect(perv);
+                drawTextInCenter(painter, perv, _stamp.value("Децимальный номер"), 3.5);
                 painter.rotate(90);
 
                 painter.translate(mm_to_points_print(161), mm_to_points_print(227.5));
@@ -558,13 +566,55 @@ void DocPainter::drawDocument(QPainter &painter, PageContainer pages)
                 QRect list(mm_to_points(-39),mm_to_points(-24.3), mm_to_points(13), mm_to_points(4));// Лист
                 QRect lists(mm_to_points(-24),mm_to_points(-24.3), mm_to_points(17), mm_to_points(4));// Листов
                 QRect organization(mm_to_points(-54),mm_to_points(-19), mm_to_points(47), mm_to_points(12));// Организация
-                // Рисование квадрата
-                painter.drawRect(rsal);
-                painter.drawRect(pageNumper);
-                // Рисование текста по центру квадрата
-                QString rsAL = QString::fromStdString(std::string("RSAL XXXXXX.XXX") + "ПЭ3");
-                drawTextInCenter(painter, rsal, rsAL);
-                drawTextInCenter(painter, pageNumper, QString::number(currentPage));
+
+                // Рисование квадратов
+//                painter.drawRect(razrab);
+//                painter.drawRect(prov);
+//                painter.drawRect(chertil);
+//                painter.drawRect(chertila);
+//                painter.drawRect(nContr);
+//                painter.drawRect(ytv);
+//                painter.drawRect(rsal);
+//                painter.drawRect(lit1);
+//                painter.drawRect(lit2);
+//                painter.drawRect(lit3);
+//                painter.drawRect(list);
+//                painter.drawRect(lists);
+//                painter.drawRect(organization);
+
+                // Рисование текста по центру квадратов
+                drawTextInCenter(painter, razrab, _stamp.value("Разработал"));
+                drawTextInCenter(painter, prov, _stamp.value("Проверил"));
+                drawTextInCenter(painter, chertila, _stamp.value("Начальник отдела"));
+                drawTextInCenter(painter, nContr, _stamp.value("Нормоконтроль"));
+                drawTextInCenter(painter, ytv, _stamp.value("Утвердил"));
+                drawTextInCenter(painter, rsal, (_stamp.value("Децимальный номер") + "ПЭ3"));
+                drawTextInCenter(painter, lit1, _stamp.value("Графа 04 - Литера"));
+//                drawTextInCenter(painter, lit2, _stamp.value("Разработал"));
+//                drawTextInCenter(painter, lit3, _stamp.value("Разработал"));
+                drawTextInCenter(painter, list, QString::number(currentPage));
+                drawTextInCenter(painter, lists, QString::number(pageCount));
+
+                if (_stamp.value("Начальник отдела ( альтернативное название параметра)").isEmpty()){
+                    drawTextInCenter(painter, chertil, "Начальник отдела");//   Начальник отдела
+                }
+                else{
+                    drawTextInCenter(painter, chertil, _stamp.value("Начальник отдела ( альтернативное название параметра)"));//    Начальник отдела
+                }
+
+                // Работа с именем проекта
+                QString projectNameStr = _stamp.value("Наименование проекта");
+                if(projectNameStr.length() >= 30){
+                    QStringList projectStrs = splitString(projectNameStr, 30);
+//                    painter.drawRect(projectName1);
+                    drawTextInCenter(painter, projectName1, projectStrs[0]);
+//                    painter.drawRect(projectName2);
+                    drawTextInCenter(painter, projectName2, projectStrs[1]);
+                }
+                else{
+//                    painter.drawRect(projectName);
+                    drawTextInCenter(painter, projectName, projectNameStr);
+                }
 
                 //  Смещаемся для отрисовки следующего листа
                 painter.translate(mm_to_points_print(-161), mm_to_points_print(5));
@@ -577,6 +627,39 @@ void DocPainter::drawDocument(QPainter &painter, PageContainer pages)
     if(_docType == "VP"){
         //
     }
+}
+
+QStringList DocPainter::splitString(const QString &input, const int len)
+{
+    QStringList result;
+
+    QStringList words = input.split(' ', QString::SkipEmptyParts);
+    QString firstPart;
+    QString secondPart;
+
+    for (const QString &word : words) {
+        if (firstPart.length() + word.length() + 1 <= len) {
+            if (!firstPart.isEmpty()) {
+                firstPart += ' ';
+            }
+            firstPart += word;
+        } else {
+            if (!secondPart.isEmpty()) {
+                secondPart += ' ';
+            }
+            secondPart += word;
+        }
+    }
+
+    // Добавляем части в список результата
+    if (!firstPart.isEmpty()) {
+        result << firstPart;
+    }
+    if (!secondPart.isEmpty()) {
+        result << secondPart;
+    }
+
+    return result;
 }
 
 void DocPainter::drawTextFromMatrix(QPainter &painter, const QVector<TextElement1> &textMatrix, bool xMirror, bool yMirror, double marginX, double marginY){

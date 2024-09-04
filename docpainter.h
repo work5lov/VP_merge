@@ -17,6 +17,7 @@ public:
 
 public slots:
     void setData(PageContainer pages);
+    void setStamp(QMap<QString,QString> stamp);
     void updateX(int x);
     void updateY(int y);
     void setDocType(QString doc);
@@ -679,9 +680,12 @@ private:
 
     void drawDocument(QPainter &painter, PageContainer pages);
 
+    QStringList splitString(const QString &input, const int len);
+
     PageContainer _dataPagesContainer;
     int _xOffset, _yOffset;
     QString _docType;
+    QMap<QString,QString> _stamp;
 
 };
 
