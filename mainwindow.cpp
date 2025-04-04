@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "./ui_mainwindow.h"
 #include <Windows.h>
 #include "painterprinter.h"
 
@@ -95,7 +95,7 @@ MainWindow::MainWindow(QWidget *parent)
     }
     for (int row = 1; row <= worksheet->dimension().lastRow(); ++row) {
         for (int column = 1; column <= worksheet->dimension().lastColumn(); ++column) {
-            QXlsx::Cell *cell = worksheet->cellAt(row, column);
+            auto cell = worksheet->cellAt(row, column);
             if (cell) {
                 QXlsx::Format format = cell->format();
                 QString cell_name = QString("%1%2").arg(QChar('A' + column - 1)).arg(row);
@@ -129,7 +129,7 @@ MainWindow::MainWindow(QWidget *parent)
     }
     for (int row = 1; row <= worksheetSP->dimension().lastRow(); ++row) {
         for (int column = 1; column <= worksheetSP->dimension().lastColumn(); ++column) {
-            QXlsx::Cell *cell = worksheetSP->cellAt(row, column);
+            auto cell = worksheetSP->cellAt(row, column);
             if (cell) {
                 QXlsx::Format format = cell->format();
                 QString cell_name = QString("%1%2").arg(QChar('A' + column - 1)).arg(row);
@@ -142,7 +142,7 @@ MainWindow::MainWindow(QWidget *parent)
     QMap<QString, QXlsx::Format> cellFormat;
     for (int column = 5; column <= worksheet->dimension().lastColumn(); ++column) {
         int row = 4;
-        QXlsx::Cell *cell = worksheet->cellAt(row, column);
+        auto cell = worksheet->cellAt(row, column);
         if (cell) {
             QXlsx::Format format = cell->format();
             QString cell_name = QString("%1%2").arg(QChar('A' + column - 1)).arg(row);
@@ -256,7 +256,7 @@ void MainWindow::createSheetXlsxVP(QString filemane, QString sheetName)
     }
     for (auto it = cellFormatsVP.begin(); it != cellFormatsVP.end(); ++it) {
         QString cell_name = it.key();
-//        QXlsx::Cell *cell = xlsx.cellAt(cell_name);
+//        auto cell = xlsx.cellAt(cell_name);
         QString sellText = xlsx.read(cell_name).toString();
         QXlsx::Format format = it.value();
         xlsx.write(cell_name,sellText,format);
@@ -270,8 +270,8 @@ void MainWindow::createSheetXlsxVP(QString filemane, QString sheetName)
     QXlsx::Worksheet *worksheet3 = xlsx.currentWorksheet();
     for (int row = 1; row <= worksheet2->dimension().lastRow(); ++row) {
         for (int column = 1; column <= worksheet2->dimension().lastColumn(); ++column) {
-            QXlsx::Cell *cell = worksheet2->cellAt(row, column);
-//            QXlsx::Cell *cell2 = worksheet3->cellAt(row, column);
+            auto cell = worksheet2->cellAt(row, column);
+//            auto cell2 = worksheet3->cellAt(row, column);
             if (cell) {
                 worksheet3->write(row,column,cell->value(), cell->format());
             }
@@ -306,7 +306,7 @@ void MainWindow::copyPE2listStyle(QMap<int, double> &columnWidthPE, QMap<int, do
     }
     for (int row = 1; row <= worksheetPE->dimension().lastRow(); ++row) {
         for (int column = 1; column <= worksheetPE->dimension().lastColumn(); ++column) {
-            QXlsx::Cell *cell = worksheetPE->cellAt(row, column);
+            auto cell = worksheetPE->cellAt(row, column);
             if (cell) {
                 QXlsx::Format format = cell->format();
                 QString cell_name = QString("%1%2").arg(QChar('A' + column - 1)).arg(row);
@@ -343,7 +343,7 @@ void MainWindow::copySP2listStyle(QMap<int, double> &columnWidthPE, QMap<int, do
     }
     for (int row = 1; row <= worksheetPE->dimension().lastRow(); ++row) {
         for (int column = 1; column <= worksheetPE->dimension().lastColumn(); ++column) {
-            QXlsx::Cell *cell = worksheetPE->cellAt(row, column);
+            auto cell = worksheetPE->cellAt(row, column);
             if (cell) {
                 QXlsx::Format format = cell->format();
                 QString cell_name = QString("%1%2").arg(QChar('A' + column - 1)).arg(row);
@@ -385,7 +385,7 @@ void MainWindow::createSheetXlsxPE(QString filemane, QString sheetName)
     }
     for (auto it = cellFormatsPE.begin(); it != cellFormatsPE.end(); ++it) {
         QString cell_name = it.key();
-//        QXlsx::Cell *cell = xlsx.cellAt(cell_name);
+//        auto cell = xlsx.cellAt(cell_name);
         QString sellText = xlsx.read(cell_name).toString();
         QXlsx::Format format = it.value();
         xlsx.write(cell_name,sellText,format);
@@ -396,8 +396,8 @@ void MainWindow::createSheetXlsxPE(QString filemane, QString sheetName)
     QXlsx::Worksheet *worksheet3 = xlsx.currentWorksheet();
     for (int row = 1; row <= worksheet2->dimension().lastRow(); ++row) {
         for (int column = 1; column <= worksheet2->dimension().lastColumn(); ++column) {
-            QXlsx::Cell *cell = worksheet2->cellAt(row, column);
-//            QXlsx::Cell *cell2 = worksheet3->cellAt(row, column);
+            auto cell = worksheet2->cellAt(row, column);
+//            auto cell2 = worksheet3->cellAt(row, column);
             if (cell) {
                 worksheet3->write(row,column,cell->value(), cell->format());
             }
@@ -438,7 +438,7 @@ void MainWindow::createSheetXlsxSP(QString filemane, QString sheetName)
     }
     for (auto it = cellFormatsPE.begin(); it != cellFormatsPE.end(); ++it) {
         QString cell_name = it.key();
-//        QXlsx::Cell *cell = xlsx.cellAt(cell_name);
+//        auto cell = xlsx.cellAt(cell_name);
         QString sellText = xlsx.read(cell_name).toString();
         QXlsx::Format format = it.value();
         xlsx.write(cell_name,sellText,format);
@@ -449,8 +449,8 @@ void MainWindow::createSheetXlsxSP(QString filemane, QString sheetName)
     QXlsx::Worksheet *worksheet3 = xlsx.currentWorksheet();
     for (int row = 1; row <= worksheet2->dimension().lastRow(); ++row) {
         for (int column = 1; column <= worksheet2->dimension().lastColumn(); ++column) {
-            QXlsx::Cell *cell = worksheet2->cellAt(row, column);
-//            QXlsx::Cell *cell2 = worksheet3->cellAt(row, column);
+            auto cell = worksheet2->cellAt(row, column);
+//            auto cell2 = worksheet3->cellAt(row, column);
             if (cell) {
                 worksheet3->write(row,column,cell->value(), cell->format());
             }
@@ -630,7 +630,7 @@ void MainWindow::createPE(QString filemane)
     forCopy.write(36,19, pageCount + 1);
 
     QXlsx::Worksheet *worksheet = forCopy.currentWorksheet();
-    QXlsx::Cell *cell = worksheet->cellAt(5, 10);
+    auto cell = worksheet->cellAt(5, 10);
     QString sellText = forCopy.read(5, 10).toString();
     QXlsx::Format format = cell->format();
     qDebug() << format.bottomBorderStyle() << format.leftBorderStyle() << format.rightBorderStyle();
@@ -794,7 +794,7 @@ void MainWindow::createPE(QString filemane, QString distPath)
             QXlsx::Worksheet *worksheet = forCopy.currentWorksheet();
             for (int row = 2; row <= 32; row++) {
                 for (int col = 4; col <= 16; col++) {
-                    QXlsx::Cell *cell = worksheet->cellAt(row, col);
+                    auto cell = worksheet->cellAt(row, col);
                     QString sellText = forCopy.read(row, col).toString();
                     QXlsx::Format format = cell->format();
                     QXlsx::Format::BorderStyle style(Format::BorderMedium);
@@ -819,7 +819,7 @@ void MainWindow::createPE(QString filemane, QString distPath)
     forCopy.write(36,19, pageCount + 1);
 
     QXlsx::Worksheet *worksheet = forCopy.currentWorksheet();
-    QXlsx::Cell *cell = worksheet->cellAt(5, 10);
+    auto cell = worksheet->cellAt(5, 10);
     QString sellText = forCopy.read(5, 10).toString();
     QXlsx::Format format = cell->format();
     qDebug() << format.bottomBorderStyle() << format.leftBorderStyle() << format.rightBorderStyle();
@@ -2500,7 +2500,7 @@ void MainWindow::on_pushButton_2_clicked()
             for (int row1 = doubleRow; row1 <= worksheet3->dimension().lastRow(); row1++){
                 for (int col = 1; col <= worksheet3->dimension().lastColumn(); col++)
                 {
-                    QXlsx::Cell *cell1 = worksheet3->cellAt(row1+1,col);
+                    auto cell1 = worksheet3->cellAt(row1+1,col);
                     if(cell1){
                         worksheet2->write(row1+1+match,col,cell1->value());
                     }
@@ -2606,8 +2606,8 @@ void MainWindow::on_pushButton_2_clicked()
     for (int row = 1; row <= cnt; ++row) {
         if (row > 21){
             for (int column = 1; column <= worksheetFC1->dimension().lastColumn(); ++column) {
-                QXlsx::Cell *cell = worksheetFC1->cellAt(4, column);
-    //            QXlsx::Cell *cell2 = worksheet3->cellAt(row, column);
+                auto cell = worksheetFC1->cellAt(4, column);
+    //            auto cell2 = worksheet3->cellAt(row, column);
                 if (cell) {
                     worksheetFC2->write(row,column,cell->value(), cell->format());
                 }
@@ -2616,8 +2616,8 @@ void MainWindow::on_pushButton_2_clicked()
         else{
             qDebug()<<"row<21";
             for (int column = 1; column <= worksheetFC->dimension().lastColumn(); ++column) {
-                QXlsx::Cell *cell = worksheetFC->cellAt(4, column);
-    //            QXlsx::Cell *cell2 = worksheet3->cellAt(row, column);
+                auto cell = worksheetFC->cellAt(4, column);
+    //            auto cell2 = worksheet3->cellAt(row, column);
                 if (cell) {
                     worksheetFC2->write(row,column,cell->value(), cell->format());
                 }
