@@ -175,15 +175,137 @@ MainWindow::MainWindow(QWidget *parent)
 
     pp = new painterPrinter();
 
+    qDebug() << "ui->perechenHbar" << ui->perechenHbar->maximum();
+
     connect(ui->perechenHbar, &QSlider::valueChanged, ui->canvasPE, &DocPainter::updateX);
     connect(ui->perechenVbar, &QSlider::valueChanged, ui->canvasPE, &DocPainter::updateY);
 
-    connect(ui->specificationHbar, &QSlider::valueChanged, this, &MainWindow::updateCanvasSP);
-    connect(ui->specificationVbar, &QSlider::valueChanged, this, &MainWindow::updateCanvasSP);
+    connect(ui->specificationHbar, &QSlider::valueChanged, ui->canvasSP, &DocPainter::updateX);
+    connect(ui->specificationVbar, &QSlider::valueChanged, ui->canvasSP, &DocPainter::updateY);
 
-    connect(ui->vedomostHbar, &QSlider::valueChanged, this, &MainWindow::updateCanvasVP);
-    connect(ui->vedomostVbar, &QSlider::valueChanged, this, &MainWindow::updateCanvasVP);
+    connect(ui->vedomostHbar, &QSlider::valueChanged, ui->canvasVP, &DocPainter::updateX);
+    connect(ui->vedomostVbar, &QSlider::valueChanged, ui->canvasVP, &DocPainter::updateY);
 
+
+    //  Блок кода, который нужен для отладки программы
+    inDirXml = "boas.xml";
+
+    fileMap.insert(projectObozn(inDirXml),inDirXml);
+
+    // Получаем компоновку (layout) из boasListGB
+    QLayout *layout = ui->boasListGB->layout();
+
+    // Проверяем, существует ли компоновка
+    if (layout) {
+        // Перебираем все дочерние виджеты в компоновке
+        while (QLayoutItem *item = layout->takeAt(0)) {
+            // Удаляем виджет из компоновки и освобождаем память
+            delete item->widget();
+            delete item;
+        }
+        delete layout;
+    }
+
+    // Удаляем layout из QGroupBox
+    //    ui->boasListGB->setLayout(nullptr);
+
+    // Создаем вертикальную компоновку
+    QGridLayout *gridLayout = new QGridLayout();
+
+    QList<QCheckBox*> checkBoxList;
+    QList<QLineEdit*> lineEditList;
+
+    int projectsCount = fileMap.size();
+
+    if(projectsCount < 2){
+        auto it = fileMap.begin(); // Получаем итератор на первый элемент
+        QString firstKey = it.key(); // Получаем ключ первого элемента
+        QCheckBox *checkBox = new QCheckBox(firstKey, this); // Используем имя группы "boasListGB"
+        QLineEdit *lineEdit = new QLineEdit(nullptr,this);
+        lineEdit->setObjectName(firstKey);
+        checkBox->setChecked(true);
+        fileFinals.append(fileMap[checkBox->text()]);
+        fileFinals.removeDuplicates();
+        checkBoxList.append(checkBox);
+        lineEditList.append(lineEdit);
+    }
+    else{
+        for (auto it = fileMap.constBegin(); it != fileMap.constEnd(); ++it){
+            QString firstKey = it.key(); // Получаем ключ первого элемента
+            QCheckBox *checkBox = new QCheckBox(firstKey, this); // Используем имя группы "boasListGB"
+            QLineEdit *lineEdit = new QLineEdit(nullptr,this);
+            lineEdit->setObjectName(firstKey);
+            checkBox->setChecked(true);
+            fileFinals.append(fileMap[checkBox->text()]);
+            fileFinals.removeDuplicates();
+            checkBoxList.append(checkBox);
+            lineEditList.append(lineEdit);
+        }
+    }
+
+    // Создание и добавление кнопок для каждого графика на форму и соединение сигнала переключения с обработчиком
+    for (int i = 0; i < checkBoxList.size(); i++) {
+        connect(checkBoxList[i], &QCheckBox::stateChanged, this, [=](int checked) {
+            if (checked == Qt::Checked) {
+                fileFinals.append(fileMap[checkBoxList[i]->text()]);
+                fileFinals.removeDuplicates();
+            } else {
+                int index = fileFinals.indexOf(fileMap[checkBoxList[i]->text()]);
+                if (index != -1) {
+                    fileFinals.removeAt(index);
+                }
+            }
+        });
+    }
+
+    for (int i = 0; i < checkBoxList.size(); i++) {
+        gridLayout->addWidget(checkBoxList[i], i, 0);
+        gridLayout->addWidget(lineEditList[i], i, 1);
+    }
+
+    // Устанавливаем созданную вертикальную компоновку для QGroupBox
+    ui->boasListGB->setLayout(gridLayout);
+
+    parseXML(inDirXml);
+    setupStampData();
+    stampPE.insert("Децимальный номер", projectOboz);
+    //    createPE(projectOboz);
+    //    createSP(projectOboz);
+    //    createVP(projectOboz);
+
+    QString projectName;
+    QLineEdit *lineEdit = findChild<QLineEdit*>(projectOboz);
+
+    // Проверить, был ли найден QLineEdit
+    if (lineEdit) {
+        // QLineEdit был найден, можно использовать его
+        projectName = lineEdit->text();
+        qDebug() << "Текст из QLineEdit: " << projectName;
+    } else {
+        // QLineEdit с указанным именем не был найден
+        qDebug() << "QLineEdit с именем 'имя_объекта' не найден.";
+    }
+
+    stampPE.insert("Наименование проекта", projectName);
+
+    stampSP.insert("Децимальный номер", projectOboz);
+    stampSP.insert("Наименование проекта", projectName);
+    stampVP.insert("Децимальный номер", projectOboz);
+    stampVP.insert("Наименование проекта", projectName);
+    ui->canvasPE->setDocType("PE");
+    ui->canvasPE->setStamp(stampPE);
+    ui->canvasPE->setData(containerPE);
+
+    ui->canvasSP->setDocType("SP");
+    ui->canvasSP->setStamp(stampSP);
+    ui->canvasSP->setData(containerSP);
+
+    ui->canvasVP->setDocType("VP");
+    ui->canvasVP->setStamp(stampVP);
+    ui->canvasVP->setData(containerVP);
+
+    qDebug() << projectOboz;
+    containersClear();
 
 //    connect(ui->slider_scale, &QSlider::valueChanged, this, &MainWindow::updateCanvas);
 //    ui->tabWidget->setTabEnabled(4,false);
@@ -227,7 +349,11 @@ void MainWindow::updateCanvasPE()
 
 void MainWindow::updateCanvasSP()
 {
-    //
+    _xOffsetSP = 10*ui->specificationHbar->value();
+    _yOffsetSP = 50*ui->specificationVbar->value();
+
+    update();
+    repaint();
 }
 
 void MainWindow::updateCanvasVP()
@@ -2060,16 +2186,16 @@ void MainWindow::parseElementLines(const QString &filePath)
     }
 
     // Максимальное количество элементов на первой странице
-    const int firstPageMax = 23;
+    const uint8_t firstPageMax = 23;
     // Максимальное количество элементов на последующих страницах
-    const int otherPagesMax = 29;
+    const uint8_t otherPagesMax = 29;
 
     // Разделение списка pipelines на страницы
     Page currentPagePE, currentPageVP, currentPageSP;
     for (int i = 0; i < pipelines.size(); ++i) {
         if ((i == firstPageMax && currentPagePE.pipelines.size() == firstPageMax) ||
             (i > firstPageMax && (i - firstPageMax) % otherPagesMax == 0)) {
-            containerPE.pages.append(currentPagePE);
+            containerPE.pages.append(currentPagePE);            
             currentPagePE = Page();
         }
         currentPagePE.pipelines.append(pipelines.at(i));
@@ -2081,7 +2207,7 @@ void MainWindow::parseElementLines(const QString &filePath)
     // Разделение списка pivplines на страницы
     for (int i = 0; i < pivplines.size(); ++i) {
         if ((i == firstPageMax - 1 && currentPageVP.pivplines.size() == firstPageMax - 1) ||
-            (i > firstPageMax - 1 && (i - firstPageMax - 1) % otherPagesMax + 1 == 0)) {
+            (i > firstPageMax && (i - firstPageMax) % otherPagesMax == 0)) {
             containerVP.pages.append(currentPageVP);
             currentPageVP = Page();
         }
@@ -2126,8 +2252,6 @@ void MainWindow::parseElementLines(const QString &filePath)
 //Обработчик нажатия кнопки для формирования КД
 void MainWindow::on_pushButton_clicked()
 {
-//    inDir = QFileDialog::getOpenFileName(0,"Выберите исходный файл для создания ВП","","*.xlsx");
-//     delete ui;
     int fileCount = fileFinals.size();
     if(fileCount < 2){
         containersClear();
@@ -3481,9 +3605,21 @@ void MainWindow::on_choseXml_clicked()
 
     stampPE.insert("Наименование проекта", projectName);
 
+    stampSP.insert("Децимальный номер", projectOboz);
+    stampSP.insert("Наименование проекта", projectName);
+    stampVP.insert("Децимальный номер", projectOboz);
+    stampVP.insert("Наименование проекта", projectName);
     ui->canvasPE->setDocType("PE");
     ui->canvasPE->setStamp(stampPE);
     ui->canvasPE->setData(containerPE);
+
+    ui->canvasSP->setDocType("SP");
+    ui->canvasSP->setStamp(stampSP);
+    ui->canvasSP->setData(containerSP);
+
+    ui->canvasVP->setDocType("VP");
+    ui->canvasVP->setStamp(stampVP);
+    ui->canvasVP->setData(containerVP);
 
     qDebug() << projectOboz;
     containersClear();
@@ -3716,7 +3852,7 @@ void MainWindow::on_choseGroupDir_clicked()
 //        QRect squre(mm_to_points(42),mm_to_points(22+i*8), mm_to_points(66), mm_to_points(4));// Координаты и размеры квадрата 4 столбец СП
 //        QRect squre(mm_to_points(112),mm_to_points(22+i*8), mm_to_points(61), mm_to_points(4));// Координаты и размеры квадрата 5 столбец СП
 //        QRect squre(mm_to_points(175),mm_to_points(22+i*8), mm_to_points(5), mm_to_points(4));// Координаты и размеры квадрата 6 столбец СП
-//        QRect squre(mm_to_points(184),mm_to_points(22+i*8), mm_to_points(21), mm_to_points(4));// Координаты и размеры квадрата 6 столбец СП
+//        QRect squre(mm_to_points(184),mm_to_points(22+i*8), mm_to_points(21), mm_to_points(4));// Координаты и размеры квадрата 7 столбец СП
 
 //        QRect squre(mm_to_points(21.6),mm_to_points(34+i*8), mm_to_points(4), mm_to_points(4));// Координаты и размеры квадрата 1 столбец ВП
 //        QRect squre(mm_to_points(28),mm_to_points(34+i*8), mm_to_points(58), mm_to_points(4));// Координаты и размеры квадрата 2 столбец ВП
