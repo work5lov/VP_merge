@@ -1,17 +1,25 @@
-#ifndef APPCONTROLLER_H
-#define APPCONTROLLER_H
+#ifndef PROJECTFACADE_H
+#define PROJECTFACADE_H
 
 #include <QObject>
 #include <QString>
 #include <QStringList>
 
-#include "backend/projectfacade.h"
+#include "backend/documentexportresult.h"
+#include "backend/documentrenderdata.h"
+#include "backend/groupedvpgeneratorservice.h"
+#include "backend/headlessdocumentexportservice.h"
+#include "backend/pegeneratorservice.h"
+#include "backend/projecttypes.h"
+#include "backend/spgeneratorservice.h"
+#include "backend/vpgeneratorservice.h"
+#include "backend/xmlprojectparser.h"
 
-class AppController : public QObject
+class ProjectFacade : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString currentXmlPath READ currentXmlPath NOTIFY currentXmlPathChanged)
-    Q_PROPERTY(QString currentProjectCode READ currentProjectCode NOTIFY currentProjectCodeChanged)
+    Q_PROPERTY(QString currentProjectCode READ currentProjectCode NOTIFY currentProjectChanged)
     Q_PROPERTY(QString statusMessage READ statusMessage NOTIFY statusMessageChanged)
     Q_PROPERTY(QString lastError READ lastError NOTIFY lastErrorChanged)
     Q_PROPERTY(QStringList importedFiles READ importedFiles NOTIFY importedFilesChanged)
@@ -35,7 +43,7 @@ class AppController : public QObject
     Q_PROPERTY(QString groupedVpPdfOutputPath READ groupedVpPdfOutputPath NOTIFY generationArtifactsChanged)
 
 public:
-    explicit AppController(QObject *parent = nullptr);
+    explicit ProjectFacade(QObject *parent = nullptr);
 
     QString currentXmlPath() const;
     QString currentProjectCode() const;
@@ -86,9 +94,16 @@ public:
     Q_INVOKABLE bool previewPainterReady(const QString &documentType) const;
     Q_INVOKABLE bool exportPreviewDocumentPdf(const QString &documentType);
 
+    const ProjectData &currentProject() const;
+    ImportSummary importSummary() const;
+    GenerationArtifacts generationArtifacts() const;
+    DocumentPreviewState previewState() const;
+    DocumentRenderSnapshot previewSnapshot(const QString &documentType) const;
+    DocumentExportResult lastDocumentExportResult() const;
+
 signals:
     void currentXmlPathChanged();
-    void currentProjectCodeChanged();
+    void currentProjectChanged();
     void statusMessageChanged();
     void lastErrorChanged();
     void importedFilesChanged();
@@ -96,7 +111,31 @@ signals:
     void generationArtifactsChanged();
 
 private:
-    ProjectFacade m_facade;
+    void setStatusMessage(const QString &message);
+    void setLastError(const QString &message);
+    void syncStampMaps();
+    void applyCommonStampValue(const QString &key, const QString &value);
+    QString effectiveProjectCode() const;
+    DocumentRenderData buildRenderData(DocumentKind kind) const;
+    QString documentTypeKey(DocumentKind kind) const;
+    QString pdfOutputPath(DocumentKind kind) const;
+    DocumentRenderSnapshot buildRenderSnapshot(DocumentKind kind) const;
+    QString documentTitle(DocumentKind kind) const;
+    QString pageFormat(DocumentKind kind) const;
+    QString stampRoleSummary(const QMap<QString, QString> &stamp) const;
+
+    XmlProjectParser m_parser;
+    ProjectData m_currentProject;
+    ImportSummary m_importSummary;
+    GenerationArtifacts m_generationArtifacts;
+    PeGeneratorService m_peGeneratorService;
+    SpGeneratorService m_spGeneratorService;
+    VpGeneratorService m_vpGeneratorService;
+    GroupedVpGeneratorService m_groupedVpGeneratorService;
+    HeadlessDocumentExportService m_headlessDocumentExportService;
+    DocumentExportResult m_lastDocumentExportResult;
+    QString m_statusMessage;
+    QString m_lastError;
 };
 
-#endif // APPCONTROLLER_H
+#endif // PROJECTFACADE_H
